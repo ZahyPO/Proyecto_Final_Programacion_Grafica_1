@@ -1,7 +1,7 @@
 package org.yourorghere;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 
@@ -16,6 +16,7 @@ public class M_Mouse implements MouseListener, MouseMotionListener {
     @Override
     public void mouseMoved(MouseEvent e) {
         int y = e.getY();
+
         System.out.println(y);
     }
 
@@ -26,10 +27,12 @@ public class M_Mouse implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+//        System.out.println(e.getX());
+
         if (e.isMetaDown()) {
-            Proyecto_Final.vistx = Proyecto_Final.vistx + 1;
+            Proyecto_Final.vistz = Proyecto_Final.vistz + 1;
         } else {
-            Proyecto_Final.vistx = Proyecto_Final.vistx - 1;
+            Proyecto_Final.vistz = Proyecto_Final.vistz - 1;
         }
     }
 
@@ -39,14 +42,18 @@ public class M_Mouse implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
+//        System.out.println("2");
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+//        System.out.println("5");
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
+//        System.out.println(e.getY());
     }
 
 }
