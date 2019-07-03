@@ -55,7 +55,7 @@ public class C_Caminos {
         this.banca7 = new E_Banca(gl, -0.61f, 0, -0.22f, 0.02f, 0.02f, 0.02f, 0, 1, 1, 1);
         this.banca8 = new E_Banca(gl, -0.2f, 0, 0.7f, 0.02f, 0.02f, 0.02f, 135, 1, 1, 1);
         this.banca9 = new E_Banca(gl, -0.8f, 0, -0.22f, 0.02f, 0.02f, 0.02f, 0, 1, 1, 1);
-        this.banca10 = new E_Banca(gl, -0.4f, 0, 0.1f, 0.02f, 0.02f, 0.02f, 180, 1, 1, 1);
+        this.banca10 = new E_Banca(gl, -0.4f, 0, 0.1f, 0.02f, 0.02f, 0.02f, 180, 1, 0, 1);
 
 
         this.tubo1 = new P_Cilindro(gl, -0.17f, 0.07f, 0.045f, 0.02f, 0.02f, 0.04f, 0, 0, 0, 0.4f, 0.4f, 0.4f, 0.1, 0.1);
