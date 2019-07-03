@@ -46,17 +46,17 @@ public class C_Caminos {
         this.puente2 = new E_Tablas(gl, -0.23f, 0.033f, 0, 1.16f, 0.01f, 0.05f, 0, 0, 35, 9);
         this.puente3 = new E_Tablas(gl, 0.27f, 0.04f, 0, 1.25f, 0.01f, 0.05f, 0, 0, -25, 10);
 
-        this.banca1 = new E_Banca(gl, -0.3f, 0, -0.5f, 0.03f, 0.03f, 0.03f, 45, 1, 1, 1);
-        this.banca2 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca3 = new E_Banca(gl, 0.2f, 0, 0.60f, 0.03f, 0.03f, 0.03f, -135, 1, 1, 1);
+        this.banca1 = new E_Banca(gl, -0.3f, 0, -0.5f, 0.02f, 0.02f, 0.02f, 45, 1, 1, 1);
+        this.banca2 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.02f, 0.02f, 0.02f, -45, 1, 1, 1);
+        this.banca3 = new E_Banca(gl, 0.2f, 0, 0.7f, 0.02f, 0.02f, 0.02f, -135, 1, 1, 1);
+        this.banca4 = new E_Banca(gl, 0.6f, 0, -0.1f, 0.02f, 0.02f, 0.02f, 0, 1, 1, 1);
+        this.banca5 = new E_Banca(gl, 0.6f, 0, 0.1f, 0.02f, 0.02f, 0.02f, 180, 1, 1, 1);
+        this.banca6 = new E_Banca(gl, 0.7f, 0, -0.3f, 0.02f, 0.02f, 0.02f, 90, 1, 1, 1);
+        this.banca7 = new E_Banca(gl, -0.61f, 0, -0.22f, 0.02f, 0.02f, 0.02f, 0, 1, 1, 1);
+        this.banca8 = new E_Banca(gl, -0.2f, 0, 0.7f, 0.02f, 0.02f, 0.02f, 135, 1, 1, 1);
+        this.banca9 = new E_Banca(gl, -0.8f, 0, -0.22f, 0.02f, 0.02f, 0.02f, 0, 1, 1, 1);
+        this.banca10 = new E_Banca(gl, -0.4f, 0, 0.1f, 0.02f, 0.02f, 0.02f, 180, 1, 1, 1);
 
-        this.banca4 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca5 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca6 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca7 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca8 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca9 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
-        this.banca10 = new E_Banca(gl, 0.4f, 0, -0.55f, 0.03f, 0.03f, 0.03f, -45, 1, 1, 1);
 
         this.tubo1 = new P_Cilindro(gl, -0.17f, 0.07f, 0.045f, 0.02f, 0.02f, 0.04f, 0, 0, 0, 0.4f, 0.4f, 0.4f, 0.1, 0.1);
         this.tubo2 = new P_Cilindro(gl, 0.35f, 0, 0.045f, 0.02f, 0.02f, 0.04f, 0, 35, 0, 0.4f, 0.4f, 0.3f, 0.1, 0.1);
@@ -97,6 +97,13 @@ public class C_Caminos {
         this.banca1.Dibuja();
         this.banca2.Dibuja();
         this.banca3.Dibuja();
+        this.banca4.Dibuja();
+        this.banca5.Dibuja();
+        this.banca6.Dibuja();
+        this.banca7.Dibuja();
+        this.banca8.Dibuja();
+        this.banca9.Dibuja();
+        this.banca10.Dibuja();
 
         this.tubo1.x = -0.17f;
 
@@ -134,7 +141,7 @@ public class C_Caminos {
             this.tubo2.x = this.tubo2.x - 0.019f;
             this.tubo2.y = this.tubo2.y + 0.008f;
         }
-        
+
         pasamanos1.z = -pasamanos1.z;
         pasamanos2.z = -pasamanos2.z;
         pasamanos3.z = -pasamanos3.z;

@@ -32,7 +32,7 @@ public class E_Arbol_2_Esfera {
         this.tallo = new P_Cubo(gl, 0, 0.3f, 0, 0.05f, 0.3f, 0.05f, 0, 0, 0, 0.4f, 0.2f, 0);
 
         this.copa1 = new P_Esfera(gl, 0.15f, 0.8f, 0, 0.25f, 0.4f, 0.25f, 0, 0, 0, 0.4f, 0.9f, 0);
-        this.copa2 = new P_Esfera(gl, -0.15f, 0.8f, 0, 0.25f, 0.3f, 0.25f, 0, 0, 0, 0.3f, 0.9f, 0);
+        this.copa2 = new P_Esfera(gl, -0.15f, 0.8f, 0, 0.25f, 0.3f, 0.25f, 0, 0, 0, 0.4f, 0.9f, 0.2f);
 
     }
 

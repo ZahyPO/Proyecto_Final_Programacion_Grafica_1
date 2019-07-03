@@ -78,14 +78,14 @@ public class Proyecto_Final implements GLEventListener {
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 250, 200, 90, 0, 0, 0.1f, 0.4f, 0.2f);
-//        this.lago = new C_Lago(gl, 0, 0, -40, 40, 50, 50);
-//        this.parqueadero = new C_Parqueadero(gl, 190, 0, -140, 30, 30, 30);
-//        this.cancha = new C_Canchas(gl, -160, 0.0f, 110, 80, 80, 80, 90);
-//        this.parque_niño = new C_Parque_Niños(gl, 150, 0.05f, 100, 70, 70, 70, 0);
-//        this.jardin = new C_Jardin_Chino(gl, 0, 0.1f, -160, 80, 40, 80, 0);
-//        this.Parq_Perritos = new C_Parque_Perritos(gl, -170, 0.1f, -100, 50, 50, 50, 0);
+        this.lago = new C_Lago(gl, 0, 0, -40, 40, 50, 50);
+        this.parqueadero = new C_Parqueadero(gl, 190, 0, -140, 30, 30, 30);
+        this.cancha = new C_Canchas(gl, -160, 0.0f, 110, 80, 80, 80, 90);
+        this.parque_niño = new C_Parque_Niños(gl, 150, 0.05f, 100, 70, 70, 70, 0);
+        this.jardin = new C_Jardin_Chino(gl, 0, 0.1f, -160, 80, 40, 80, 0);
+        this.Parq_Perritos = new C_Parque_Perritos(gl, -170, 0.1f, -100, 50, 50, 50, 0);
         this.caminos = new C_Caminos(gl, 0, 0f, 0, 240, 190, 190, 0);
-//        this.arboles = new C_Arboles(gl, 0, 0, 0, 250, 200, 200);
+        this.arboles = new C_Arboles(gl, 0, 0, 0, 250, 200, 200);
 //        this.cesped = new C_Cesped(gl, 0, 0, 0, 250, 200, 200);
         
 
@@ -144,14 +144,14 @@ public class Proyecto_Final implements GLEventListener {
 
         //******************************************************************************************************************************************************************************************
         this.suelo.Dibuja();
-//        this.lago.Dibuja();
-//        this.parqueadero.Dibuja();
-//        this.cancha.Dibuja();
-//        this.parque_niño.Dibuja();
-//        this.jardin.Dibuja();
-//        this.Parq_Perritos.Dibuja();
+        this.lago.Dibuja();
+        this.parqueadero.Dibuja();
+        this.cancha.Dibuja();
+        this.parque_niño.Dibuja();
+        this.jardin.Dibuja();
+        this.Parq_Perritos.Dibuja();
         this.caminos.Dibuja();
-//        this.arboles.Dibuja();
+        this.arboles.Dibuja();
 //        this.cesped.Dibuja();
         
 
