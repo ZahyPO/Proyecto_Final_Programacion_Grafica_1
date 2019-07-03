@@ -7,11 +7,12 @@ import java.awt.event.KeyListener;
  *
  * @author fing.labcom
  */
-public class Teclado implements KeyListener {
+public class M_Teclado implements KeyListener {
 
-    public Teclado() {
+    public M_Teclado() {
     }
 
+    @Override
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == '1') {
             Proyecto_Final.camx = -100;
@@ -48,6 +49,7 @@ public class Teclado implements KeyListener {
         }
     }
 
+    @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             Proyecto_Final.camx += 1;

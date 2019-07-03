@@ -33,8 +33,13 @@ public class Proyecto_Final implements GLEventListener {
 //    static double camy = 70;
     static double camy = 600;
     static double camz = 100;
+    
+    static double vistx = 0;
+    static double visty = 0;
+    static double vistz = 0;
 
-    Teclado mt;
+    M_Teclado mt;
+    M_Mouse mm;
 
     public static void main(String[] args) {
         Frame frame = new Frame("Proyecto Final");
@@ -73,8 +78,11 @@ public class Proyecto_Final implements GLEventListener {
         GL gl = drawable.getGL();
         gl.glEnable(GL.GL_DEPTH_TEST);
 
-        this.mt = new Teclado(); //Quitamos el static
+        this.mt = new M_Teclado(); //Quitamos el static
         drawable.addKeyListener(mt);
+        
+        this.mm = new M_Mouse();
+        drawable.addMouseListener(mm);
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 250, 200, 90, 0, 0, 0.1f, 0.4f, 0.2f);
@@ -126,7 +134,7 @@ public class Proyecto_Final implements GLEventListener {
         gl.glLoadIdentity();
         GLU glu = new GLU();
 
-        glu.gluLookAt(camx, camy, camz, 0, 0, 0, 0, 1, 0);
+        glu.gluLookAt(camx, camy, camz, vistx, visty, vistz, 0, 1, 0);
 
         gl.glBegin(gl.GL_LINES);//Inicio de la creacion//Tipo 
         gl.glLineWidth(2);
