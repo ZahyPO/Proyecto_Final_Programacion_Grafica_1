@@ -71,10 +71,10 @@ public class E_Maceta {
 
         gl.glColor3f(this.r, this.g, this.b);
         //Cara Superior
-        gl.glVertex3f(1, 0.7f, -1);
-        gl.glVertex3f(1, 0.7f, 1);
-        gl.glVertex3f(-1, 0.7f, 1);
-        gl.glVertex3f(-1, 0.7f, -1);
+        gl.glVertex3f(1, 0.2f, -1);
+        gl.glVertex3f(1, 0.2f, 1);
+        gl.glVertex3f(-1, 0.2f, 1);
+        gl.glVertex3f(-1, 0.2f, -1);
 
         gl.glEnd();
 
