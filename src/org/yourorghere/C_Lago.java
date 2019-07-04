@@ -11,13 +11,14 @@ public class C_Lago {
     GL gl;
     float x, y, z;
     float w, h, p;
+    float ry;
     E_Lago lago1;
 
     E_Lago lago2, lago3;
 
     E_Barco barquito1, barquito2, barquito3, barquito4, barquito5;
 
-    public C_Lago(GL gl, float x, float y, float z, float w, float h, float p) {
+    public C_Lago(GL gl, float x, float y, float z, float w, float h, float p, float ry) {
         this.gl = gl;
         this.x = x;
         this.y = y;
@@ -25,6 +26,7 @@ public class C_Lago {
         this.w = w;
         this.h = h;
         this.p = p;
+        this.ry = ry;
 
         this.lago1 = new E_Lago(gl, 0, 0, 0, 0.5f, 1f, 1, 0, 0, 0);
         this.lago2 = new E_Lago(gl, 0, 0, 0, 0.5f, 1f, 1, 0, 90, 0);
@@ -43,7 +45,7 @@ public class C_Lago {
 
         gl.glTranslatef(this.x, this.y, this.z);
 
-        gl.glRotatef(90, 0, 1, 0);
+        gl.glRotatef(ry, 0, 1, 0);
         gl.glScalef(this.w, this.h, this.p);
 
         this.lago1.Dibuja();

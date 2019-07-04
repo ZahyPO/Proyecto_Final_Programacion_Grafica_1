@@ -12,10 +12,11 @@ public class P_Dona {
     float w, h, p;
     float rx, ry, rz;
     float r, g, b;
+    float radint, radext;
     GL gl;
     GLUT glut = new GLUT();
 
-    public P_Dona(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz, float r, float g, float b) {
+    public P_Dona(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz, float r, float g, float b, float radint, float radext) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -29,6 +30,8 @@ public class P_Dona {
         this.g = g;
         this.b = b;
         this.gl = gl;
+        this.radint = radint;
+        this.radext = radext;
     }
 
     public void Dibuja() {
@@ -43,7 +46,7 @@ public class P_Dona {
         gl.glRotatef(rz, 0, 0, 1);
         gl.glScalef(w, h, p);
 
-        glut.glutSolidTorus(0.3, 1.5, 7, 7);
+        glut.glutSolidTorus(radint, radext, 7, 7);
         
         gl.glEnd();
 

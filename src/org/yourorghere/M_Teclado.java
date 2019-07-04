@@ -15,15 +15,15 @@ public class M_Teclado implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == '1') {
-            Proyecto_Final.camx = -100;
-            Proyecto_Final.camy = 600;
-            Proyecto_Final.camz = 100;
+            Proyecto_Final.camx = -10;
+            Proyecto_Final.camy = 60;
+            Proyecto_Final.camz = 10;
 
         }
         if (e.getKeyChar() == '2') {
             Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 40;
-            Proyecto_Final.camz = 70;
+            Proyecto_Final.camy = 4;
+            Proyecto_Final.camz = 7;
 
         }
         if (e.getKeyChar() == '3') {
@@ -34,7 +34,7 @@ public class M_Teclado implements KeyListener {
         }
         if (e.getKeyChar() == '4') {
 
-            int r = 300;
+            int r = 30;
 
             Proyecto_Final.a = Proyecto_Final.a + 0.01f;
             
@@ -44,7 +44,7 @@ public class M_Teclado implements KeyListener {
         if (e.getKeyChar() == '5') {
 
             Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 600;
+            Proyecto_Final.camy = 120;
             Proyecto_Final.camz = 1;
         }
     }

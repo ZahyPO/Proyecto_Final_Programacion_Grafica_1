@@ -14,6 +14,8 @@ public class C_Parqueadero {
     P_Cuadrado suelo, division;
     P_Cubo borde1, borde2, borde3, borde4, borde5, borde6;
 
+    E_Carro carro;
+
     public C_Parqueadero(GL gl, float x, float y, float z, float w, float h, float p) {
         this.gl = gl;
         this.x = x;
@@ -31,6 +33,8 @@ public class C_Parqueadero {
         this.borde5 = new P_Cubo(gl, -2, 0.05f, 1.15f, 0.85f, 0.05f, 0.03f, 0, 90, 0, 0.9f, 0.8f, 0.1f);
         this.borde6 = new P_Cubo(gl, -2, 0.05f, -1.15f, 0.85f, 0.05f, 0.03f, 0, 90, 0, 0.9f, 0.8f, 0.1f);
         this.division = new P_Cuadrado(gl, 1.5f, 0.02f, 1, 0.5f, 0.05f, 90, 0, 0, 0.9f, 0.9f, 0.9f);
+
+        this.carro = new E_Carro(gl, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0.9f, 0.2f, 0.1f);
 
     }
 
@@ -88,6 +92,8 @@ public class C_Parqueadero {
         this.division.Dibuja();
         this.division.z = -1.3f;
         this.division.Dibuja();
+
+        carro.Dibuja(false);
 
         gl.glEnd();
 

@@ -36,7 +36,7 @@ public class E_Columpio {
 
         this.tubop = new P_Cilindro(gl, -1, 0.69f, 0, 0.1f, 0.1f, 2, 0, 90, 0, r, g, b, 0.5f, 0.5f);
 
-        this.asiento = new P_Dona(gl, -0.5f, 0.2f, 0, 0.1f, 0.1f, 0.1f, 90, 0, 0, 0.4f, 0.3f, 0);
+        this.asiento = new P_Dona(gl, -0.5f, 0.2f, 0, 0.1f, 0.1f, 0.1f, 90, 0, 0, 0.4f, 0.3f, 0, 0.25f, 1.5f);
     }
 
     public void Dibuja() {

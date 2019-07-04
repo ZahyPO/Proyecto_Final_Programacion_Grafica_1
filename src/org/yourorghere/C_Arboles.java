@@ -17,7 +17,7 @@ public class C_Arboles {
 
     P_Cuadrado suelo;
 
-    public C_Arboles(GL gl, float x, float y, float z, float w, float h, float p) {
+    public C_Arboles(GL gl, float x, float y, float z, float w, float h, float p, boolean inverso) {
         this.gl = gl;
         this.x = x;
         this.y = y;
@@ -43,6 +43,19 @@ public class C_Arboles {
         this.arb_11 = new E_Arreglo_Arboles(gl, -0.48f, 0, -0.1f, 1f, 0.1f, 1f, 1, 3, 0.05f, 0.05f, 2);
         this.arb_12 = new E_Arreglo_Arboles(gl, 0.475f, 0, 0.03f, 1f, 0.1f, 1f, 1, 2, 0.05f, 0.05f, 2);
 
+        if (inverso) {
+
+            this.arb_2.x = 0.38f - this.arb_2.x;
+//            this.arb_4.x = -0.17f + this.arb_4.x;
+            this.arb_5.x = -this.arb_5.x;
+            this.arb_6.x = -this.arb_6.x;
+            this.arb_7.x = -this.arb_7.x;
+            this.arb_8.x = -this.arb_8.x;
+            this.arb_9.x = -this.arb_9.x;
+            this.arb_10.x = -this.arb_10.x;
+            this.arb_11.x = -this.arb_11.x;
+            this.arb_12.x = -this.arb_12.x;
+        }
     }
 
     public void Dibuja() {
@@ -56,14 +69,14 @@ public class C_Arboles {
         this.arb_2.Dibuja();
         this.arb_3.Dibuja();
         this.arb_4.Dibuja();
-        this.arb_5.Dibuja();
-        this.arb_6.Dibuja();
-        this.arb_7.Dibuja();
-        this.arb_8.Dibuja();
-        this.arb_9.Dibuja();
-        this.arb_10.Dibuja();
-        this.arb_11.Dibuja();
-        this.arb_12.Dibuja();
+//        this.arb_5.Dibuja();
+//        this.arb_6.Dibuja();
+//        this.arb_7.Dibuja();
+//        this.arb_8.Dibuja();
+//        this.arb_9.Dibuja();
+//        this.arb_10.Dibuja();
+//        this.arb_11.Dibuja();
+//        this.arb_12.Dibuja();
 
         gl.glEnd();
 
