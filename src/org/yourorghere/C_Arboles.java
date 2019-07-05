@@ -46,15 +46,15 @@ public class C_Arboles {
         if (inverso) {
 
             this.arb_2.x = 0.38f - this.arb_2.x;
-//            this.arb_4.x = -0.17f + this.arb_4.x;
-            this.arb_5.x = -this.arb_5.x;
-            this.arb_6.x = -this.arb_6.x;
-            this.arb_7.x = -this.arb_7.x;
-            this.arb_8.x = -this.arb_8.x;
-            this.arb_9.x = -this.arb_9.x;
-            this.arb_10.x = -this.arb_10.x;
-            this.arb_11.x = -this.arb_11.x;
-            this.arb_12.x = -this.arb_12.x;
+            this.arb_4.x = -0.48f - this.arb_4.x;
+            this.arb_5.x = -0.97f - this.arb_5.x;
+            this.arb_6.x = 0.3f - this.arb_6.x;
+            this.arb_7.x = 0.97f - this.arb_7.x;
+            this.arb_8.x = -0.97f - this.arb_8.x;
+            this.arb_9.x = 0.95f - this.arb_9.x;
+            this.arb_10.x = -0.97f - this.arb_10.x;
+            this.arb_11.x = 0.98f - this.arb_11.x;
+            this.arb_12.x = -0.97f - this.arb_12.x;
         }
     }
 
@@ -69,14 +69,14 @@ public class C_Arboles {
         this.arb_2.Dibuja();
         this.arb_3.Dibuja();
         this.arb_4.Dibuja();
-//        this.arb_5.Dibuja();
-//        this.arb_6.Dibuja();
-//        this.arb_7.Dibuja();
-//        this.arb_8.Dibuja();
-//        this.arb_9.Dibuja();
-//        this.arb_10.Dibuja();
-//        this.arb_11.Dibuja();
-//        this.arb_12.Dibuja();
+        this.arb_5.Dibuja();
+        this.arb_6.Dibuja();
+        this.arb_7.Dibuja();
+        this.arb_8.Dibuja();
+        this.arb_9.Dibuja();
+        this.arb_10.Dibuja();
+        this.arb_11.Dibuja();
+        this.arb_12.Dibuja();
 
         gl.glEnd();
 

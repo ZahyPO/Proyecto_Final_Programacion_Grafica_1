@@ -27,8 +27,7 @@ public class E_Carro {
     P_Cuadrado techo;
     P_Dona llanta1, llanta2;
 
-    P_Cuadrado suelo;
-
+//    P_Cuadrado suelo;
     public E_Carro(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz, float r, float g, float b) {
         this.gl = gl;
         this.x = x;
@@ -44,8 +43,7 @@ public class E_Carro {
         this.g = g;
         this.b = b;
 
-        this.suelo = new P_Cuadrado(gl, 0, 0, 0, 1, 1, 90, 0, 0, 1f, 0.4f, 0.2f);
-
+//        this.suelo = new P_Cuadrado(gl, 0, 0, 0, 1, 1, 90, 0, 0, 1f, 0.4f, 0.2f);
         this.techo = new P_Cuadrado(gl, -0.2f, 0.68f, 0, 0.2f, 0.3f, 90, 0, 0, 0, 0, 0);
 
         this.balde = new E_Maceta(gl, -0.3f, 0.3f, 0, 0.3f, 0.15f, 0.3f, 0, r, g, b);
@@ -66,12 +64,12 @@ public class E_Carro {
         this.llanta2 = new P_Dona(gl, 0.4f, 0.17f, 0.35f, 0.15f, 0.15f, 0.15f, 0, 0, 0, 0, 0, 0, 0.6f, 0.8f);
     }
 
-    public void Dibuja(boolean mover) {
+    public void Dibuja(boolean mover, int opcavan) {
 
         gl.glPushMatrix();
         if (mover) {
-            requisitos();
-            subeybaja();
+            subeybaja(opcavan);
+            gira();
         }
 
         gl.glTranslatef(x, y, z);
@@ -81,7 +79,7 @@ public class E_Carro {
 
         gl.glScalef(w, h, p);
 
-        suelo.Dibuja();
+//        suelo.Dibuja();
         balde.Dibuja();
         cara.Dibuja();
         cara1.Dibuja();
@@ -108,20 +106,28 @@ public class E_Carro {
 
     void requisitos() {
 
-        if (cont <= 20) {
+        if (cont <= 40) {
             cont++;
         } else {
-            cont = -20;
+            cont = -40;
             avanza = !avanza;
         }
     }
 
-    void subeybaja() {
+    void subeybaja(int opc) {
         requisitos();
-        if (avanza) {
-            this.x = this.x + 1;
+        if (opc == 1) {
+            if (avanza) {
+                this.z = this.z + 0.05f;
+            } else {
+                this.z = this.z - 0.05f;
+            }
         } else {
-            this.x = this.x - 1;
+            if (avanza) {
+                this.x = this.x + 0.05f;
+            } else {
+                this.x = this.x - 0.05f;
+            }
         }
 
     }

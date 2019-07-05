@@ -18,16 +18,14 @@ public class Proyecto_Final implements GLEventListener {
     static float a = 0;
 
     C_Lago lago1, lago2;
-    C_Parqueadero parqueadero;
+    C_Parqueadero parqueadero1, parqueadero2;
     C_Canchas cancha1, cancha2;
-    C_Parque_Niños parque_niño;
-    C_Jardin_Chino jardin;
+    C_Parque_Niños parque_niño1, parque_niño2;
+    C_Jardin_Chino jardin1, jardin2;
     C_Caminos caminos1, caminos2;
-    C_Parque_Perritos Parq_Perritos;
+    C_Parque_Perritos Parq_Perritos1, Parq_Perritos2;
     C_Arboles arboles1, arboles2;
     C_Cesped cesped;
-
-    P_Trapecio prueba;
 
     static double camx = 0;
     static double camy = 120;
@@ -85,27 +83,32 @@ public class Proyecto_Final implements GLEventListener {
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 50, 20, 90, 0, 0, 0.1f, 0.4f, 0.2f);
-
+//
         this.lago1 = new C_Lago(gl, 25, 0, -4, 4, 5, 5, 90);
         this.lago2 = new C_Lago(gl, -25, 0, 4, 4, 5, 3, 270);
-        
-        this.parqueadero = new C_Parqueadero(gl, 44, 0, -14, 3, 3, 3);
-        
+
+        this.parqueadero1 = new C_Parqueadero(gl, 44, 0, -14, 3, 3, 3, 0);
+        this.parqueadero2 = new C_Parqueadero(gl, -44, 0, -14, 3, 3, 3, 90);
+
         this.cancha1 = new C_Canchas(gl, 9f, 0.0f, 11, 8, 8, 8, 90);
         this.cancha2 = new C_Canchas(gl, -9f, 0.0f, 11, 8, 8, 8, 270);
-        
-        this.parque_niño = new C_Parque_Niños(gl, 40, 0.05f, 10, 7, 7, 7, 0);
-        this.jardin = new C_Jardin_Chino(gl, 25, 0.1f, -16, 8, 4, 8, 0);
-        this.Parq_Perritos = new C_Parque_Perritos(gl, 8f, 0.1f, -10, 5, 5, 5, 0);
-        
+
+        this.parque_niño1 = new C_Parque_Niños(gl, 40, 0.05f, 10, 7, 7, 7, 0);
+        this.parque_niño2 = new C_Parque_Niños(gl, -40, 0.05f, 10, 7, 7, 7, 0);
+
+        this.jardin1 = new C_Jardin_Chino(gl, 25, 0.1f, -16, 8, 4, 8, 0);
+        this.jardin2 = new C_Jardin_Chino(gl, -25, 0.1f, -16, 8, 4, 8, 180);
+
+        this.Parq_Perritos1 = new C_Parque_Perritos(gl, 8f, 0.1f, -10, 5, 5, 5, 0);
+        this.Parq_Perritos2 = new C_Parque_Perritos(gl, -7f, 0.1f, -12f, 5, 5, 3.5f, 0);
+
         this.caminos1 = new C_Caminos(gl, 25, 0f, 0, 24, 19, 19, 0);
-        this.caminos2 = new C_Caminos(gl, -25, 0f, 0, 24, 19, 19,0);
-        
+        this.caminos2 = new C_Caminos(gl, -25, 0f, 0, 24, 19, 19, 0);
+
         this.arboles1 = new C_Arboles(gl, 25, 0, 0, 25, 20, 20, false);
         this.arboles2 = new C_Arboles(gl, -25, 0, 0, 25, 20, 20, true);
 //        this.cesped = new C_Cesped(gl, 0, 0, 0, 250, 200, 200);
 
-//        this.prueba = new P_Trapecio(gl, 0, 20, 0, 20, 20, 20, 0, 0, 0, 1, 1, 1);
 //******************************************************************************************************************************************************************************************
         System.err.println("INIT GL IS: " + gl.getClass().getName());
 
@@ -161,28 +164,32 @@ public class Proyecto_Final implements GLEventListener {
 
         //******************************************************************************************************************************************************************************************
         this.suelo.Dibuja();
-        
+
         this.lago1.Dibuja();
         this.lago2.Dibuja();
-        
-        this.parqueadero.Dibuja();
-        
+        this.parqueadero1.Dibuja();
+        this.parqueadero2.Dibuja();
+
         this.cancha1.Dibuja();
         this.cancha2.Dibuja();
-        
-        this.parque_niño.Dibuja();
-        this.jardin.Dibuja();
-        this.Parq_Perritos.Dibuja();
-        
+
+        this.parque_niño1.Dibuja();
+        this.parque_niño2.Dibuja();
+
+        this.jardin1.Dibuja();
+        this.jardin2.Dibuja();
+
+        this.Parq_Perritos1.Dibuja();
+        this.Parq_Perritos2.Dibuja();
+
         this.caminos1.Dibuja();
         this.caminos2.Dibuja();
-        
+
         this.arboles1.Dibuja();
         this.arboles2.Dibuja();
 //        this.cesped.Dibuja();
 
-//        prueba.Dibuja();
-        //******************************************************************************************************************************************************************************************
+//******************************************************************************************************************************************************************************************
         // Flush all drawing operations to the graphics card
         gl.glFlush();
     }
