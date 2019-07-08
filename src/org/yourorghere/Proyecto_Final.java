@@ -29,7 +29,8 @@ public class Proyecto_Final implements GLEventListener {
     C_Cesped cesped;
 
 //    E_Bicicleta bici;
-    E_Nube nube;
+//    E_Nube nube;
+    E_Estrella star;
 
     static double camx = 0;
     static double camy = 4;
@@ -118,7 +119,8 @@ public class Proyecto_Final implements GLEventListener {
 //        this.cesped = new C_Cesped(gl, 0, 0, 0, 250, 200, 200);
 
 //        this.bici = new E_Bicicleta(gl, 0, 0, 0, 5, 5, 5, 0, 0, 0, 1, 0, 1);
-        this.nube = new E_Nube(gl, 0, 5, 0, 5, 5, 5, 0, 0, 0);
+//        this.nube = new E_Nube(gl, 0, 5, 0, 5, 5, 5, 0, 0, 0);
+        this.star = new E_Estrella(gl, 0, 5, 0, 5, 5, 5, 0, 0, 0);
 
 //******************************************************************************************************************************************************************************************
         System.err.println("INIT GL IS: " + gl.getClass().getName());
@@ -200,7 +202,8 @@ public class Proyecto_Final implements GLEventListener {
 //        this.arboles2.Dibuja();
 //        this.cesped.Dibuja();
 //        this.bici.Dibuja(true);
-        this.nube.Dibuja();
+//        this.nube.Dibuja();
+        this.star.Dibuja();
 //******************************************************************************************************************************************************************************************
         // Flush all drawing operations to the graphics card
         gl.glFlush();
