@@ -2,6 +2,7 @@ package org.yourorghere;
 
 import com.sun.opengl.util.Animator;
 import java.awt.Frame;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.media.opengl.GL;
@@ -36,7 +37,8 @@ public class Proyecto_Final implements GLEventListener {
     static double vistz = 0;
 
     M_Teclado mt;
-    M_Mouse mm;
+    M_Mouse_Click mm1;
+    M_Mouse_Movimiento mm2;
 
     public static void main(String[] args) {
         Frame frame = new Frame("Proyecto Final");
@@ -78,8 +80,11 @@ public class Proyecto_Final implements GLEventListener {
         this.mt = new M_Teclado(); //Quitamos el static
         drawable.addKeyListener(mt);
 
-        this.mm = new M_Mouse();
-        drawable.addMouseListener(mm);
+        this.mm1 = new M_Mouse_Click();
+        drawable.addMouseListener(mm1);
+        
+        this.mm2 = new M_Mouse_Movimiento();
+        drawable.addMouseMotionListener(mm2);
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 50, 20, 90, 0, 0, 0.1f, 0.4f, 0.2f);
