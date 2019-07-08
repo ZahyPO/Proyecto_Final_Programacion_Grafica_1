@@ -41,8 +41,8 @@ public class C_Parqueadero {
         this.carro3 = new E_Carro(gl, 1.47f, 0, -1.75f, 0.45f, 0.45f, 0.4f, 0, 180, 0, 0.9f, 0.5f, 0.1f);
         this.carro4 = new E_Carro(gl, 0f, 0, 0.55f, 0.45f, 0.45f, 0.4f, 0, 180, 0, 0.5f, 0.2f, 0.1f);
         this.carro5 = new E_Carro(gl, 0, 0, -1.05f, 0.45f, 0.45f, 0.4f, 0, 0, 0, 0.7f, 0.2f, 0.7f);
-        this.carro6 = new E_Carro(gl, 0.75f, 0, -1f, 0.45f, 0.45f, 0.4f, 0, 90, 0, 0.9f, 0.2f, 0.1f);
-        this.carro7 = new E_Carro(gl, -1.3f, 0, 1.8f, 0.45f, 0.45f, 0.4f, 0, 0, 0, 0.4f, 0.2f, 0.8f);
+        this.carro6 = new E_Carro(gl, 0.75f, 0, -0.5f, 0.45f, 0.45f, 0.4f, 0, 90, 0, 0.9f, 0.2f, 0.1f);
+        this.carro7 = new E_Carro(gl, -0.5f, 0, 1.8f, 0.45f, 0.45f, 0.4f, 0, 0, 0, 0.4f, 0.2f, 0.8f);
 
     }
 

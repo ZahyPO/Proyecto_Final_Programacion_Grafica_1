@@ -26,7 +26,7 @@ public class M_Mouse_Movimiento implements MouseMotionListener {
             Proyecto_Final.vistx = Proyecto_Final.vistx + 0.1;
 
         }
-        System.out.println(e.getY());
+        
         if (y < 250) {
             Proyecto_Final.visty = Proyecto_Final.visty + 0.1;
         }

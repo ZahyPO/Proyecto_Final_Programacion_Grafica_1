@@ -106,10 +106,10 @@ public class E_Carro {
 
     void requisitos() {
 
-        if (cont <= 40) {
+        if (cont <= 20) {
             cont++;
         } else {
-            cont = -40;
+            cont = -20;
             avanza = !avanza;
         }
     }
@@ -134,6 +134,6 @@ public class E_Carro {
 
     void gira() {
 
-        this.llanta1.ry += 1;
+        this.llanta1.ry += 0.1f;
     }
 }

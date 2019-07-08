@@ -58,8 +58,8 @@ public class E_Barco {
 
         gl.glPushMatrix();
         requisitos();
-        rotarbandera();
-        subeybaja();
+        movBarco();
+        movBand();
         gl.glTranslatef(x, y, z);
         gl.glRotatef(rx, 1, 0, 0);
         gl.glRotatef(ry, 0, 1, 0);
@@ -94,7 +94,7 @@ public class E_Barco {
         }
     }
 
-    void rotarbandera() {
+    void movBarco() {
 
         if (gira) {
             this.y = this.y + 0.0005f;
@@ -103,8 +103,8 @@ public class E_Barco {
         }
     }
 
-    void subeybaja() {
-        requisitos();
+    void movBand() {
+
         if (gira) {
             bandera.ry = bandera.ry + 5;
         } else {
