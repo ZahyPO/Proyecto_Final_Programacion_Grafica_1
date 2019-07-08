@@ -15,7 +15,7 @@ public class E_Estrella {
     boolean si_no = true;
     int cont = 0;
 
-    P_Cuadrado suelo1, suelo2;
+    
 
     P_Esfera centro;
 
@@ -33,8 +33,7 @@ public class E_Estrella {
         this.ry = ry;
         this.rz = rz;
 
-        this.suelo1 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 1);
-        this.suelo2 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 0, 0, 0, 1, 1, 1);
+      
 
         this.centro = new P_Esfera(gl, 0, 0, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 1, 1, 0.7f);
         

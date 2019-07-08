@@ -23,6 +23,8 @@ public class C_Caminos {
     P_Cilindro tubo1, tubo2, tubo3;
     P_Cilindro pasamanos1, pasamanos2, pasamanos3;
 
+    E_Faro faro1, faro2, faro3;
+
     public C_Caminos(GL gl, float x, float y, float z, float w, float h, float p, float ry) {
         this.gl = gl;
         this.x = x;
@@ -64,6 +66,10 @@ public class C_Caminos {
         this.pasamanos1 = new P_Cilindro(gl, -0.18f, 0.11f, 0.045f, 0.02f, 0.02f, 0.4f, 0, 90, 0, 0, 0.1f, 0.1f, 0.2, 0.2);
         this.pasamanos2 = new P_Cilindro(gl, -0.3f, 0.027f, 0.045f, 0.02f, 0.02f, 0.14f, 0, 55, 0, 0, 0.1f, 0.1f, 0.2, 0.2);
         this.pasamanos3 = new P_Cilindro(gl, 0.38f, 0.04f, 0.045f, 0.02f, 0.02f, 0.165f, 0, -65, 0, 0, 0.1f, 0.1f, 0.2, 0.2);
+
+        this.faro1 = new E_Faro(gl, -1, 0, 0.05f, .2f, .2f, .2f, 0, 0, 0);
+        this.faro2 = new E_Faro(gl, 0.3f, 0, 0.75f, .2f, .2f, .2f, 0, 0, 0);
+        this.faro3 = new E_Faro(gl, 0.3f, 0, -0.75f, .2f, .2f, .2f, 0, 0, 0);
     }
 
     public void Dibuja() {
@@ -111,7 +117,6 @@ public class C_Caminos {
             tubo1.Dibuja();
             this.tubo1.z = -this.tubo1.z;
             tubo1.Dibuja();
-
             this.tubo1.x = this.tubo1.x + 0.019f;
         }
 
@@ -153,6 +158,26 @@ public class C_Caminos {
         pasamanos1.Dibuja();
         pasamanos2.Dibuja();
         pasamanos3.Dibuja();
+
+        faro1.x = -1;
+        faro1.z = -.05f;
+
+        for (int i = 0; i < 15; i++) {
+            faro1.Dibuja();
+            faro1.z = -faro1.z;
+            faro1.x += .135f;
+            faro1.Dibuja();
+        }
+
+        faro2.x = 0.3f;
+        faro2.Dibuja();
+
+        for (int i = 0; i < 3; i++) {
+            faro2.x = faro2.x - .17f;
+            faro2.Dibuja();
+        }
+        
+        faro3.Dibuja();
 
         gl.glEnd();
 
