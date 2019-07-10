@@ -6,12 +6,12 @@ import javax.media.opengl.GL;
 /*
  * @author Zay
  */
-public class C_Estrellas {
+public class C_Nubes {
 
-    ArrayList<E_Estrella> estrellas1 = new ArrayList<E_Estrella>();
-    ArrayList<E_Estrella> estrellas2 = new ArrayList<E_Estrella>();
-    ArrayList<E_Estrella> estrellas3 = new ArrayList<E_Estrella>();
-    ArrayList<E_Estrella> estrellas4 = new ArrayList<E_Estrella>();
+    ArrayList<E_Nube> nubes1 = new ArrayList<E_Nube>();
+    ArrayList<E_Nube> nubes2 = new ArrayList<E_Nube>();
+    ArrayList<E_Nube> nubes3 = new ArrayList<E_Nube>();
+    ArrayList<E_Nube> nubes4 = new ArrayList<E_Nube>();
 
     GL gl;
     float x, y, z;
@@ -23,7 +23,7 @@ public class C_Estrellas {
 
     P_Cuadrado suelo;
 
-    public C_Estrellas(GL gl, float x, float y, float z, float w, float h, float d, int n, float a, float b) {
+    public C_Nubes(GL gl, float x, float y, float z, float w, float h, float d, int n, float a, float b) {
         this.gl = gl;
         this.x = x;
         this.y = y;
@@ -42,7 +42,7 @@ public class C_Estrellas {
             yr = (float) Math.random() - 1;
             zr = (float) Math.random() - 1;
 
-            estrellas1.add(new E_Estrella(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 0, 0));
+            nubes1.add(new E_Nube(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 0, 0));
 
         }
 
@@ -52,7 +52,7 @@ public class C_Estrellas {
             yr = (float) Math.random() - 1;
             zr = (float) Math.random() - 1;
 
-            estrellas2.add(new E_Estrella(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 0, 0));
+            nubes2.add(new E_Nube(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, -45, 0));
 
         }
         for (int i = 0; i < n; i++) {
@@ -61,7 +61,7 @@ public class C_Estrellas {
             yr = (float) Math.random() - 1;
             zr = (float) Math.random();
 
-            estrellas3.add(new E_Estrella(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 0, 0));
+            nubes3.add(new E_Nube(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 90, 0));
 
         }
         for (int i = 0; i < n; i++) {
@@ -70,7 +70,7 @@ public class C_Estrellas {
             yr = (float) Math.random() - 1;
             zr = (float) Math.random();
 
-            estrellas4.add(new E_Estrella(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 0, 0));
+            nubes4.add(new E_Nube(gl, xr, yr, zr, a / 2, 1f, b / 2, 0, 45, 0));
         }
 
     }
@@ -82,17 +82,17 @@ public class C_Estrellas {
         gl.glTranslatef(x, y, z);
         gl.glScalef(w, h, d);
 
-//        suelo.Dibuja();
-        for (E_Estrella v : estrellas1) {
+//        suelo.DibujaEstrellas();
+        for (E_Nube v : nubes1) {
             v.Dibuja();
         }
-        for (E_Estrella v : estrellas2) {
+        for (E_Nube v : nubes2) {
             v.Dibuja();
         }
-        for (E_Estrella v : estrellas3) {
+        for (E_Nube v : nubes3) {
             v.Dibuja();
         }
-        for (E_Estrella v : estrellas4) {
+        for (E_Nube v : nubes4) {
             v.Dibuja();
         }
 

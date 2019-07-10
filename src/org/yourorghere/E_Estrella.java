@@ -33,12 +33,12 @@ public class E_Estrella {
 
         this.centro = new P_Esfera(gl, 0, 0, 0, 0.17f, 0.17f, 0.17f, 0, 0, 0, 1, 1, 0.7f);
 
-        this.p1 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 0, 0, 1, 1, 0.2f);
-        this.p2 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 180, 0, 0, 1, 1, 0.2f);
-        this.p3 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 90, 0, 0, 1, 1, 0);
-        this.p4 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, -90, 0, 0, 1, 1, 0);
-        this.p5 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 90, 0, 1, 1, 0);
-        this.p6 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, -90, 0, 1, 1, 0);
+        this.p1 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 0, 0, 1, 1, 0.3f);
+        this.p2 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 180, 0, 0, 1, 1, 0.3f);
+        this.p3 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 90, 0, 0, 1, 1, .5f);
+        this.p4 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, -90, 0, 0, 1, 1, .5f);
+        this.p5 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 90, 0, 1, 1, .5f);
+        this.p6 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, -90, 0, 1, 1, .5f);
 
     }
 
@@ -48,7 +48,7 @@ public class E_Estrella {
         requisitos();
 //        subeybaja();
         rota();
-//        titila();
+        titila();
 
         gl.glTranslatef(this.x, this.y, this.z);
         gl.glRotatef(ry, 0, 1, 0);
@@ -83,22 +83,18 @@ public class E_Estrella {
     void subeybaja() {
 
         if (si_no) {
-            this.y = this.y + 0.005f;
+            this.y = this.y + 0.05f;
         } else {
-            this.y = this.y - 0.005f;
+            this.y = this.y - 0.05f;
         }
     }
 
     void rota() {
-
+        
         if (si_no) {
-            this.rx = this.rx + 0.05f;
-            this.ry = this.ry + 0.05f;
-            this.rz = this.rz + 0.05f;
+            this.ry = this.ry + 0.5f;
         } else {
-            this.rx = this.rx - 0.5f;
             this.ry = this.ry - 0.5f;
-            this.rz = this.rz - 0.5f;
         }
 
     }
@@ -106,13 +102,13 @@ public class E_Estrella {
     void titila() {
 
         if (si_no) {
-            this.w = this.w + 0.05f;
-            this.h = this.h + 0.05f;
-            this.p = this.p + 0.05f;
+            this.w = this.w + 0.0005f;
+            this.h = this.h + 0.0005f;
+            this.p = this.p + 0.0005f;
         } else {
-            this.w = this.w - 0.05f;
-            this.h = this.h - 0.05f;
-            this.p = this.p - 0.05f;
+            this.w = this.w - 0.0005f;
+            this.h = this.h - 0.0005f;
+            this.p = this.p - 0.0005f;
         }
 
     }
