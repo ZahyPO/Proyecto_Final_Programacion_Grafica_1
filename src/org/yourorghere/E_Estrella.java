@@ -15,8 +15,6 @@ public class E_Estrella {
     boolean si_no = true;
     int cont = 0;
 
-    
-
     P_Esfera centro;
 
     P_Hedro p1, p2, p3, p4, p5, p6, p7;
@@ -33,16 +31,14 @@ public class E_Estrella {
         this.ry = ry;
         this.rz = rz;
 
-      
+        this.centro = new P_Esfera(gl, 0, 0, 0, 0.17f, 0.17f, 0.17f, 0, 0, 0, 1, 1, 0.7f);
 
-        this.centro = new P_Esfera(gl, 0, 0, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 1, 1, 0.7f);
-        
-        this.p1 = new P_Hedro(gl, 0, 0, 0, .2f, .2f, 1f, 0, 0, 0, 1, 1, 0.2f);
-        this.p2 = new P_Hedro(gl, 0, 0, 0, .2f, .2f, 1f, 180, 0, 0, 1, 1, 0.2f);
-        this.p3 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .7f, 90, 0, 0, 1, 1, 0);
-        this.p4 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .7f, -90, 0, 0, 1, 1, 0);
-        this.p5 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .7f, 0, 90, 0, 1, 1, 0);
-        this.p6 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .7f, 0, -90, 0, 1, 1, 0);
+        this.p1 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 0, 0, 1, 1, 0.2f);
+        this.p2 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 180, 0, 0, 1, 1, 0.2f);
+        this.p3 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 90, 0, 0, 1, 1, 0);
+        this.p4 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, -90, 0, 0, 1, 1, 0);
+        this.p5 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, 90, 0, 1, 1, 0);
+        this.p6 = new P_Hedro(gl, 0, 0, 0, .1f, .1f, .5f, 0, -90, 0, 1, 1, 0);
 
     }
 
@@ -50,8 +46,9 @@ public class E_Estrella {
         gl.glPushMatrix();
 
         requisitos();
-        subeybaja();
+//        subeybaja();
         rota();
+//        titila();
 
         gl.glTranslatef(this.x, this.y, this.z);
         gl.glRotatef(ry, 0, 1, 0);
@@ -59,7 +56,6 @@ public class E_Estrella {
 
 //        this.suelo1.Dibuja();
 //        this.suelo2.Dibuja();
-
         centro.Dibuja();
         p1.Dibuja();
         p2.Dibuja();
@@ -67,7 +63,6 @@ public class E_Estrella {
         p4.Dibuja();
         p5.Dibuja();
         p6.Dibuja();
-        
 
         gl.glEnd();
 
@@ -97,9 +92,27 @@ public class E_Estrella {
     void rota() {
 
         if (si_no) {
+            this.rx = this.rx + 0.05f;
             this.ry = this.ry + 0.05f;
+            this.rz = this.rz + 0.05f;
         } else {
+            this.rx = this.rx - 0.5f;
             this.ry = this.ry - 0.5f;
+            this.rz = this.rz - 0.5f;
+        }
+
+    }
+
+    void titila() {
+
+        if (si_no) {
+            this.w = this.w + 0.05f;
+            this.h = this.h + 0.05f;
+            this.p = this.p + 0.05f;
+        } else {
+            this.w = this.w - 0.05f;
+            this.h = this.h - 0.05f;
+            this.p = this.p - 0.05f;
         }
 
     }

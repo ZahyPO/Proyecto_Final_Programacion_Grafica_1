@@ -44,7 +44,7 @@ public class M_Teclado implements KeyListener {
         if (e.getKeyChar() == '5') {
 
             Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 20;
+            Proyecto_Final.camy = 70;
             Proyecto_Final.camz = 1;
         }
     }
