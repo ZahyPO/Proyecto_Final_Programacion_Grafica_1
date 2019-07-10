@@ -15,9 +15,9 @@ public class M_Teclado implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == '1') {
-            Proyecto_Final.camx = -10;
-            Proyecto_Final.camy = 60;
-            Proyecto_Final.camz = 10;
+            Proyecto_Final.camx = 0;
+            Proyecto_Final.camy = 0;
+            Proyecto_Final.camz = 40;
 
         }
         if (e.getKeyChar() == '2') {

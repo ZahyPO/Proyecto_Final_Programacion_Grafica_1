@@ -30,13 +30,14 @@ public class Proyecto_Final implements GLEventListener {
     C_Nubes nubes;
 
     E_Bicicleta bici;
+    E_Persona persona;
 
     static double camx = 0;
-    static double camy = 4;
-    static double camz = 7;
+    static double camy = 0;
+    static double camz = 20;
 
     static double vistx = 0;
-    static double visty = 2;
+    static double visty = 0;
     static double vistz = 0;
 
     M_Teclado mt;
@@ -89,7 +90,7 @@ public class Proyecto_Final implements GLEventListener {
         drawable.addMouseListener(mm1);
 
         this.mm2 = new M_Mouse_Movimiento();
-        drawable.addMouseMotionListener(mm2);
+//       drawable.addMouseMotionListener(mm2);
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 50, 20, 90, 0, 0, 0.1f, 0.4f, 0.2f);
@@ -124,6 +125,7 @@ public class Proyecto_Final implements GLEventListener {
 //        this.cesped = new C_Cesped(gl, 0, 0, 0, 250, 200, 200);
 //        this.bici = new E_Bicicleta(gl, 0, 0, 0, 5, 5, 5, 0, 0, 0, 1, 0, 1);
 
+          this.persona = new E_Persona(gl, 0, 3, 0, 5, 5, 5, 0, 0, 0, 1, 1, 1, "parado", 2);
 //******************************************************************************************************************************************************************************************
         System.err.println("INIT GL IS: " + gl.getClass().getName());
 
@@ -211,6 +213,8 @@ public class Proyecto_Final implements GLEventListener {
 
 //        this.cesped.Dibuja();
 //        this.bici.Dibuja(true);
+
+        persona.Dibuja();
 
 //******************************************************************************************************************************************************************************************
 
