@@ -20,6 +20,8 @@ public class E_Persona {
     P_Cilindro cuello, torax, brazoI, brazoD, antebrazoI, antebrazoD, piernaI, piernaD, pantorrillaI, pantorrillaD;
     P_Esfera cabeza, cabello, manoI, manoD, pieI, pieD, cadera;
 
+    P_Circulo sonrisa, ojoI, ojoD;
+
     public E_Persona(GL gl, float x, float y, float z, float w, float h, float d, float rx, float ry, float rz, float r, float g, float b, String opc, int opccab) {
         this.gl = gl;
         this.x = x;
@@ -62,6 +64,10 @@ public class E_Persona {
 
         this.cadera = new P_Esfera(gl, 0, -0.15f, 0, .2f, .2f, .1f, 0, 0, 0, r, g, b);
 
+        this.sonrisa = new P_Circulo(gl, 0, .7f, .2f, .1f, .1f, .1f, 0, 0, 0, 1, 1, 1);
+        this.ojoI = new P_Circulo(gl, 0.07f, .75f, .2f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
+        this.ojoD = new P_Circulo(gl, -0.07f, .75f, .2f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
+
         if ("sentado".equals(opc)) {
             this.piernaD = new P_Cilindro(gl, .1f, -.3f, 0, .2f, .2f, .3f, 110, 0, 0, r, g, b, 0.3f, 0.2f);
             this.piernaI = new P_Cilindro(gl, -.1f, -.3f, 0, .2f, .2f, .3f, 110, 0, 0, r, g, b, 0.2f, 0.2f);
@@ -83,14 +89,14 @@ public class E_Persona {
             this.pieI = new P_Esfera(gl, -.1f, -1f, 0.1f, 0.05f, 0.05f, 0.1f, 0, 0, 0, r, g, b);
         }
         if ("suelo".equals(opc)) {
-            this.piernaD = new P_Cilindro(gl, .1f, -.3f, 0, .2f, .2f, .3f, 110, 0, 0, r, g, b, 0.2f, 0.3f);
-            this.piernaI = new P_Cilindro(gl, -.1f, -.3f, 0, .2f, .2f, .3f, 110, 0, 0, r, g, b, 0.2f, 0.3f);
+            this.piernaD = new P_Cilindro(gl, .1f, -.3f, 0, .2f, .2f, .3f, 130, 0, 0, r, g, b, 0.3f, 0.2f);
+            this.piernaI = new P_Cilindro(gl, -.1f, -.3f, 0, .2f, .2f, .3f, 130, 0, 0, r, g, b, 0.2f, 0.2f);
 
-            this.pantorrillaD = new P_Cilindro(gl, .1f, -.67f, 0.25f, .2f, .2f, .3f, 0, 0, 0, r, g, b, 0.2f, 0.2f);
-            this.pantorrillaI = new P_Cilindro(gl, -.1f, -.67f, 0.25f, .2f, .2f, .3f, 0, 0, 0, r, g, b, 0.2f, 0.2f);
+            this.pantorrillaD = new P_Cilindro(gl, .1f, -.45f, -0.07f, .2f, .2f, .3f, 100, 0, 0, 1f, 0.8f, 0.3f, 0.2f, 0.2f);
+            this.pantorrillaI = new P_Cilindro(gl, -.1f, -.45f, -0.07f, .2f, .2f, .3f, 100, 0, 0, 1f, 0.8f, 0.3f, 0.2f, 0.2f);
 
-            this.pieD = new P_Esfera(gl, .1f, -.7f, .3f, 0.05f, 0.05f, 0.1f, 0, 0, 0, r, g, b);
-            this.pieI = new P_Esfera(gl, -.1f, -.7f, .3f, 0.05f, 0.05f, 0.1f, 0, 0, 0, r, g, b);
+            this.pieD = new P_Esfera(gl, .1f, -.5f, -.1f, 0.05f, 0.05f, 0.1f, 90, 0, 0, r, g, b);
+            this.pieI = new P_Esfera(gl, -.1f, -.5f, -.1f, 0.05f, 0.05f, 0.1f, 90, 0, 0, r, g, b);
         }
 
     }
@@ -109,6 +115,9 @@ public class E_Persona {
 //        this.cubo.Dibuja();
         cabeza.Dibuja();
         cabello.Dibuja();
+        sonrisa.DibujaMedio();
+        ojoI.DibujaMedio();
+        ojoD.DibujaMedio();
 
         this.cuello.Dibuja();
 
