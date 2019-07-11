@@ -20,10 +20,10 @@ public class M_Mouse_Movimiento implements MouseMotionListener {
         int x = e.getX();
         int y = e.getY();
         if (x < 250) {
-            Proyecto_Final.vistx = Proyecto_Final.vistx - 0.1;
+            Proyecto_Final.vistx = Proyecto_Final.vistx - 10;
         }
         if (x > 350) {
-            Proyecto_Final.vistx = Proyecto_Final.vistx + 0.1;
+            Proyecto_Final.vistx = Proyecto_Final.vistx + 10;
 
         }
         

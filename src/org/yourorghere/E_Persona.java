@@ -22,7 +22,7 @@ public class E_Persona {
 
     P_Circulo sonrisa, ojoI, ojoD;
 
-    public E_Persona(GL gl, float x, float y, float z, float w, float h, float d, float rx, float ry, float rz, float r, float g, float b, String opc, int opccab) {
+    public E_Persona(GL gl, float x, float y, float z, float w, float h, float d, float rx, float ry, float rz, String opc, int opccab) {
         this.gl = gl;
         this.x = x;
         this.y = y;
@@ -33,9 +33,11 @@ public class E_Persona {
         this.rx = rx;
         this.ry = ry;
         this.rz = rz;
-        this.r = r;
-        this.g = g;
-        this.b = b;
+
+        r = (float) Math.random();
+        g = (float) Math.random();
+        b = (float) Math.random();
+
         this.opc = opc;
         this.opccab = opccab;
 
@@ -54,7 +56,7 @@ public class E_Persona {
         this.torax = new P_Cilindro(gl, 0, 0, 0, .4f, .4f, .4f, 0, 0, 0, r, g, b, 0.4f, 0.4f);
 
         this.brazoD = new P_Cilindro(gl, 0.1f, .37f, 0, .2f, .2f, .5f, 0, 150, 0, r, g, b, 0.3f, 0.2f);
-        this.brazoI = new P_Cilindro(gl, -0.1f, .37f, 0, .2f, .2f, .5f, 0, -150, 0, g, g, b, 0.3f, 0.2f);
+        this.brazoI = new P_Cilindro(gl, -0.1f, .37f, 0, .2f, .2f, .5f, 0, -150, 0, r, g, b, 0.3f, 0.2f);
 
         this.antebrazoD = new P_Cilindro(gl, .3f, -.05f, 0, 0.2f, 0.2f, .25f, 120, -45, 0, 1f, 0.8f, 0.3f, 0.15f, 0.15f);
         this.antebrazoI = new P_Cilindro(gl, -.3f, -.05f, 0, 0.2f, 0.2f, .25f, 120, 45, 0, 1f, 0.8f, 0.3f, 0.15f, 0.15f);
@@ -64,9 +66,9 @@ public class E_Persona {
 
         this.cadera = new P_Esfera(gl, 0, -0.15f, 0, .2f, .2f, .1f, 0, 0, 0, r, g, b);
 
-        this.sonrisa = new P_Circulo(gl, 0, .7f, .2f, .1f, .1f, .1f, 0, 0, 0, 1, 1, 1);
-        this.ojoI = new P_Circulo(gl, 0.07f, .75f, .2f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
-        this.ojoD = new P_Circulo(gl, -0.07f, .75f, .2f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
+        this.sonrisa = new P_Circulo(gl, 0, .7f, .19f, .1f, .1f, .1f, 0, 0, 0, 1, 1, 1);
+        this.ojoI = new P_Circulo(gl, 0.07f, .75f, .19f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
+        this.ojoD = new P_Circulo(gl, -0.07f, .75f, .19f, .05f, .05f, .05f, 0, 0, 180, 0, 0, 0);
 
         if ("sentado".equals(opc)) {
             this.piernaD = new P_Cilindro(gl, .1f, -.3f, 0, .2f, .2f, .3f, 110, 0, 0, r, g, b, 0.3f, 0.2f);

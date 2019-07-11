@@ -62,7 +62,6 @@ public class P_Circulo {
         gl.glRotatef(this.rz, 0, 0, 1);
         gl.glScalef(this.w, this.h, this.p);
 
-
         gl.glBegin(gl.GL_POINTS);
         gl.glPointSize(2);
 
@@ -72,12 +71,12 @@ public class P_Circulo {
             float y = (float) Math.sin(i * 2 * Math.PI / 70);
             gl.glVertex2d(1 * x, 1 * y);
         }
-        
+
         gl.glEnd();
 
         gl.glPopMatrix();
     }
-    
+
     public void DibujaMedio() {
         gl.glPushMatrix();
 
@@ -88,17 +87,15 @@ public class P_Circulo {
         gl.glRotatef(this.rz, 0, 0, 1);
         gl.glScalef(this.w, this.h, this.p);
 
-
         gl.glBegin(gl.GL_POLYGON);
-        gl.glPointSize(2);
 
-        for (int i = 50; i <= 100; i++) {
+        for (int i = 55; i <= 95; i++) {
 
             float x = (float) Math.cos(i * 2 * Math.PI / 100);
             float y = (float) Math.sin(i * 2 * Math.PI / 100);
             gl.glVertex2d(1 * x, 1 * y);
         }
-        
+
         gl.glEnd();
 
         gl.glPopMatrix();
