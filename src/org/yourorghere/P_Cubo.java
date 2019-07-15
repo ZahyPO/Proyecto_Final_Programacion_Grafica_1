@@ -44,7 +44,7 @@ public class P_Cubo {
 
         gl.glBegin(GL.GL_QUADS);
         //CARA FRONTAL
-        
+
         gl.glVertex3f(-1, 1, -1);
         gl.glVertex3f(1, 1, -1);
         gl.glVertex3f(1, -1, -1);
@@ -54,7 +54,7 @@ public class P_Cubo {
         gl.glVertex3f(-1, 1, 1);
         gl.glVertex3f(-1, -1, 1);
         gl.glVertex3f(1, -1, 1);
-        
+
         //Cara Lateral Izquierda
         gl.glVertex3f(-1, 1, 1);
         gl.glVertex3f(-1, 1, -1);
@@ -67,12 +67,13 @@ public class P_Cubo {
         gl.glVertex3f(1, 1, 1);
         gl.glVertex3f(1, -1, 1);
         gl.glVertex3f(1, -1, -1);
-        
+
         //Cara Superior
         gl.glVertex3f(1, 1, -1);
         gl.glVertex3f(1, 1, 1);
         gl.glVertex3f(-1, 1, 1);
         gl.glVertex3f(-1, 1, -1);
+
         //Cara Inferior
         gl.glVertex3f(1, -1, -1);
         gl.glVertex3f(1, -1, 1);

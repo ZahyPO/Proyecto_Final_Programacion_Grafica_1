@@ -2,8 +2,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author Zay
  */
 public class E_Faro {
@@ -14,7 +13,6 @@ public class E_Faro {
     float rx, ry, rz;
 
 //    P_Cuadrado suelo1, suelo2;
-
     P_Cilindro tubo;
     P_Cubo foco1, foco2;
     P_Piramide techo1, techo2;
@@ -33,7 +31,6 @@ public class E_Faro {
 
 //        this.suelo1 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 1);
 //        this.suelo2 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 0, 0, 0, 1, 1, 1);
-
         this.tubo = new P_Cilindro(gl, 0, 0, 0, .3f, .3f, .7f, 0, 0, 0, .5f, .6f, .5f, 0.1, 0.1);
         this.foco1 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 0, 0, 1, 1, 0);
         this.foco2 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 45, 0, 1, 1, 0.4f);
@@ -51,7 +48,6 @@ public class E_Faro {
 
 //        this.suelo1.Dibuja();
 //        this.suelo2.Dibuja();
-
         tubo.Dibuja();
         foco1.Dibuja();
         foco2.Dibuja();

@@ -2,8 +2,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author Zay
  */
 public class P_Triangulo {
@@ -42,14 +41,12 @@ public class P_Triangulo {
 
         gl.glScalef(this.w, this.h, this.d);
 
-
         gl.glBegin(GL.GL_TRIANGLES);
         //Cara Lateral Derecha
         gl.glVertex3f(0, -1, 0);
         gl.glVertex3f(1, 0, 0);
         gl.glVertex3f(0, 1, 0);
 
-        
 //        this.rx = rx + 0.8f;
 //        this.ry = ry + 0.8f;
 //        this.rz = rz + 0.8f;

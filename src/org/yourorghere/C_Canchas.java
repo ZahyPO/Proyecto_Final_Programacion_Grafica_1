@@ -14,7 +14,6 @@ public class C_Canchas {
     float ry;
 
     E_Cancha cancha1, cancha2, cancha3, cancha4;
-    
 
     public C_Canchas(GL gl, float x, float y, float z, float w, float h, float p, float ry) {
         this.gl = gl;
@@ -25,7 +24,7 @@ public class C_Canchas {
         this.h = h;
         this.p = p;
         this.ry = ry;
-        
+
         this.cancha1 = new E_Cancha(gl, -0.5f, 0, -0.5f, 0.5f, 0.5f, 0.5f, 90, 0.2f, 0.4f, 0.6f);
         this.cancha2 = new E_Cancha(gl, -0.5f, 0, 0.5f, 0.5f, 0.5f, 0.5f, 90, 0.2f, 0.4f, 0.6f);
         this.cancha3 = new E_Cancha(gl, 0.5f, 0, -0.5f, 0.5f, 0.5f, 0.5f, 90, 0.4f, 0f, 0f);

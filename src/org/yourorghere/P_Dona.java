@@ -40,14 +40,14 @@ public class P_Dona {
 
         gl.glColor3f(r, g, b);
         gl.glTranslatef(x, y, z);
-        
+
         gl.glRotatef(rx, 1, 0, 0);
         gl.glRotatef(ry, 0, 1, 0);
         gl.glRotatef(rz, 0, 0, 1);
         gl.glScalef(w, h, p);
 
         glut.glutSolidTorus(radint, radext, 7, 7);
-        
+
         gl.glEnd();
 
         gl.glPopMatrix();

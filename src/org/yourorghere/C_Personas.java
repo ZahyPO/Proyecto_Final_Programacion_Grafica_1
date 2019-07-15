@@ -13,7 +13,7 @@ public class C_Personas {
 
     P_Cuadrado suelo;
 
-    E_Persona p1, p2, p3, p4, p5, p6;
+    E_Persona p1, p2, p3, p4, p5, p6, p7, p8, p9;
 
     public C_Personas(GL gl, float x, float y, float z, float w, float h, float p) {
         this.gl = gl;
@@ -32,6 +32,9 @@ public class C_Personas {
         this.p4 = new E_Persona(gl, -0.65f, 0.28f, 0.91f, 0.05f, 0.25f, 0.05f, 0, 180, 0, "sentado", 2);
         this.p5 = new E_Persona(gl, 0f, 0.12f, 0.64f, 0.05f, 0.25f, 0.05f, 0, 180, 0, "suelo", 2);
         this.p6 = new E_Persona(gl, 0.47f, 0.18f, -0.53f, 0.05f, 0.25f, 0.05f, 0, -45, 0, "sentado", 2);
+        this.p7 = new E_Persona(gl, -0.72f, 0.18f, -0.2f, 0.05f, 0.25f, 0.05f, 0, 0, 0, "sentado", 2);
+        this.p8 = new E_Persona(gl, 0.47f, 0.18f, 0.5f, 0.02f, 0.15f, 0.02f, 0, -45, 0, "parado", 1);
+        this.p9 = new E_Persona(gl, 0.8f, 0.31f, 0.5f, 0.02f, 0.15f, 0.02f, 0, 180, 0, "suelo", 2);
     }
 
     public void Dibuja() {
@@ -41,13 +44,15 @@ public class C_Personas {
         gl.glScaled(w, h, p);
 
 //        this.suelo.Dibuja();
-
         p1.Dibuja();
         p2.Dibuja();
         p3.Dibuja();
         p4.Dibuja();
         p5.Dibuja();
         p6.Dibuja();
+        p7.Dibuja();
+        p8.Dibuja();
+        p9.Dibuja();
 
         gl.glEnd();
 

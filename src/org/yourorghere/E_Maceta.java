@@ -2,8 +2,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author zalis
  */
 public class E_Maceta {

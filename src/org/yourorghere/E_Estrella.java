@@ -90,7 +90,7 @@ public class E_Estrella {
     }
 
     void rota() {
-        
+
         if (si_no) {
             this.ry = this.ry + 0.5f;
         } else {

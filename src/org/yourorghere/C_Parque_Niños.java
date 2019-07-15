@@ -104,12 +104,12 @@ public class C_Parque_Niños {
         this.subeybaja5.Dibuja();
         this.subeybaja6.Dibuja();
         this.subeybaja7.Dibuja();
-        
+
         this.borde1.x = -this.borde1.x;
         this.borde1.Dibuja();
         this.borde1.x = -this.borde1.x;
         this.borde1.Dibuja();
-        
+
         this.borde2.z = -this.borde2.z;
         this.borde2.Dibuja();
         this.borde2.z = -this.borde2.z;

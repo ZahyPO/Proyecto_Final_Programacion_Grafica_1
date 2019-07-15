@@ -7,8 +7,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author Zay
  */
 public class P_Trapecio {

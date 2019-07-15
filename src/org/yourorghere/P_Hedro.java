@@ -56,6 +56,4 @@ public class P_Hedro {
         gl.glPopMatrix();
     }
 
-   
-
 }

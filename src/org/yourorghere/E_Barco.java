@@ -110,7 +110,6 @@ public class E_Barco {
         } else {
             bandera.ry = bandera.ry - 5;
         }
-
     }
 
     void gira() {
@@ -120,5 +119,4 @@ public class E_Barco {
         gl.glRotatef(ryy, 0, 1, 0);
         gl.glTranslatef(x, y, z);
     }
-
 }

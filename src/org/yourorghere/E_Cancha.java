@@ -2,8 +2,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author Zay
  */
 public class E_Cancha {

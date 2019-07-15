@@ -69,7 +69,7 @@ public class C_Caminos {
 
         this.faro1 = new E_Faro(gl, -1, 0, 0.05f, .2f, .2f, .2f, 0, 0, 0);
         this.faro2 = new E_Faro(gl, 0.3f, 0, 0.75f, .2f, .2f, .2f, 0, 0, 0);
-        this.faro3 = new E_Faro(gl, 0.3f, 0, -0.75f, .2f, .2f, .2f, 0, 0, 0);
+        this.faro3 = new E_Faro(gl, 0.5f, 0, -0.7f, .2f, .2f, .2f, 0, 0, 0);
     }
 
     public void Dibuja() {
@@ -176,8 +176,14 @@ public class C_Caminos {
             faro2.x = faro2.x - .17f;
             faro2.Dibuja();
         }
-        
+
+        faro3.x = 0.5f;
         faro3.Dibuja();
+
+        for (int i = 0; i < 5; i++) {
+            faro3.x = faro3.x - .17f;
+            faro3.Dibuja();
+        }
 
         gl.glEnd();
 

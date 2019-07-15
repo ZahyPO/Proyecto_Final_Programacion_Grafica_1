@@ -14,7 +14,6 @@ public class E_Bicicleta {
     float r, g, b;
 
 //    P_Cuadrado suelo;
-
     P_Dona llanta1, llanta2;
     P_Cilindro tubo1, tubo2, tubo3, tubo4, tubo5, tubo6, tubo7, tubo8;
 
@@ -36,7 +35,6 @@ public class E_Bicicleta {
         this.b = b;
 
 //        this.suelo = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 0);
-
         this.llanta1 = new P_Dona(gl, -.4f, 0.22f, 0, 0.3f, 0.3f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
         this.llanta2 = new P_Dona(gl, .4f, 0.17f, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
         this.tubo1 = new P_Cilindro(gl, -.4f, .2f, 0.03f, 0.15f, 0.15f, 0.5f, 0, 35, 0, r, g, b, 0.1, 0.1);
@@ -59,7 +57,6 @@ public class E_Bicicleta {
         gl.glScalef(this.w, this.h, this.p);
 
 //        this.suelo.Dibuja();
-
         this.llanta1.Dibuja();
         this.llanta2.Dibuja();
 

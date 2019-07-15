@@ -31,7 +31,7 @@ public class E_Tablas {
         this.ntablas = ntablas;
 
         this.anch = w / (ntablas * 40);
-        
+
         this.tabla1 = new P_Cubo(gl, -this.anch, 0, 0, this.anch, 0.2f, 1, 0, 0, 0, 0.5f, 0.3f, 0);
         this.tabla2 = new P_Cubo(gl, this.anch, 0, 0, this.anch, 0.3f, 1, 0, 0, 0, 0.5f, 0.2f, 0);
     }

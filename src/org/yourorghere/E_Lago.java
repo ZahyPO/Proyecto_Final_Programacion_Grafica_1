@@ -35,8 +35,8 @@ public class E_Lago {
         this.montaña2 = new P_Esfera(gl, -0.2f, 0f, 0, 0.7f, 0.2f, 0.3f, 0, 0, 0, 0.5f, 0.5f, 0.2f);
         this.piedra1 = new P_Esfera(gl, 0, 0f, 0, 0.05f, 0.03f, 0.05f, 0, 0, 0, 0.7f, 0.7f, 0.7f);
         this.piedra2 = new P_Esfera(gl, 0, 0f, 0, 0.04f, 0.04f, 0.04f, 0, 0, 0, 0.5f, 0.5f, 0.5f);
-        
-         this.barquito = new E_Barco(gl, -0.4f, 0, -0.4f, 0.1f, 0.15f, 0.1f, 0, 0, 0, 0, 0.7f, 0.5f);
+
+        this.barquito = new E_Barco(gl, -0.4f, 0, -0.4f, 0.1f, 0.15f, 0.1f, 0, 0, 0, 0, 0.7f, 0.5f);
     }
 
     public void Dibuja() {
@@ -68,7 +68,7 @@ public class E_Lago {
         this.montaña1.Dibuja();
         this.agua.Dibuja();
         this.montaña2.Dibuja();
-        
+
         this.barquito.gira();
         this.barquito.Dibuja();
 

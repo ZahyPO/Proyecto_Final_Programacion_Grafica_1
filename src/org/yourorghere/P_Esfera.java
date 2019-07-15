@@ -12,6 +12,10 @@ public class P_Esfera {
     float w, h, p;
     float rx, ry, rz;
     float r, g, b;
+
+    float ryy1 = 0;
+    float ryy2 = 180;
+
     GL gl;
     GLUT glut = new GLUT();
 
@@ -66,4 +70,12 @@ public class P_Esfera {
         gl.glPopMatrix();
     }
 
+    public void gira() {
+
+        this.ryy1 = this.ryy1 + 1.8f;
+
+        gl.glRotatef(ryy1, 0, 0, 1);
+        gl.glTranslatef(x, y, z);
+
+    }
 }

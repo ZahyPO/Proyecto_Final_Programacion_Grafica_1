@@ -37,7 +37,7 @@ public class M_Teclado implements KeyListener {
             int r = 30;
 
             Proyecto_Final.a = Proyecto_Final.a + 0.01f;
-            
+
             Proyecto_Final.camx = r * Math.cos(Proyecto_Final.a);;
             Proyecto_Final.camz = r * Math.sin(Proyecto_Final.a);
         }

@@ -2,8 +2,7 @@ package org.yourorghere;
 
 import javax.media.opengl.GL;
 
-/**
- *
+/*
  * @author zalis
  */
 public class E_Nube {
@@ -17,7 +16,6 @@ public class E_Nube {
     int cont = 0;
 
 //    P_Cuadrado suelo;
-
     P_Esfera nube1, nube2, nube3;
 
     public E_Nube(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz) {
@@ -33,7 +31,6 @@ public class E_Nube {
         this.rz = rz;
 
 //        this.suelo = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 0);
-
         this.nube1 = new P_Esfera(gl, 0.3f, 0, 0, 0.3f, 0.2f, 0.2f, 0, 0, 0, 1, 1, 1);
         this.nube2 = new P_Esfera(gl, 0, 0, 0, 0.3f, 0.3f, 0.3f, 0, 0, 0, .95f, .95f, .95f);
         this.nube3 = new P_Esfera(gl, -0.3f, 0, 0, 0.3f, 0.2f, 0.2f, 0, 0, 0, 1, 1, 1);
@@ -41,7 +38,7 @@ public class E_Nube {
 
     public void Dibuja() {
         gl.glPushMatrix();
-        
+
         requisitos();
         subeybaja();
         rota();
@@ -51,7 +48,6 @@ public class E_Nube {
         gl.glScalef(this.w, this.h, this.p);
 
 //        this.suelo.Dibuja();
-
         nube1.Dibuja();
         nube2.Dibuja();
         nube3.Dibuja();
@@ -82,7 +78,7 @@ public class E_Nube {
     }
 
     void rota() {
-        
+
         if (gira) {
             this.ry = this.ry + 0.05f;
         } else {
