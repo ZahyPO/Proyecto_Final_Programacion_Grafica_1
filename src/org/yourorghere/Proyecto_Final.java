@@ -34,6 +34,7 @@ public class Proyecto_Final implements GLEventListener {
     E_Cielo cielo;
 
     E_Bicicleta bici;
+    E_Perrito perro;
 
     static double camx = 0;
     static double camy = 0;
@@ -93,38 +94,39 @@ public class Proyecto_Final implements GLEventListener {
         drawable.addKeyListener(mt);
 
         this.mm = new M_Mouse();
-        drawable.addMouseListener(mm);
-        drawable.addMouseMotionListener(mm);
+//        drawable.addMouseListener(mm);
+//        drawable.addMouseMotionListener(mm);
 
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 50, 20, 90, 0, 0, 0.1f, 0.4f, 0.2f);
 
-        this.cielo = new E_Cielo(gl, 0, 10, 0, 90, 40, 50);
+//        this.lago1 = new C_Lago(gl, 25, 0, -4, 4, 5, 5, 90);
+//        this.parqueadero1 = new C_Parqueadero(gl, 44, 0, -14, 3, 3, 3, 0);
+//        this.cancha1 = new C_Canchas(gl, 9f, 0.0f, 11, 8, 15, 8, 90);
+//        this.parque_niño1 = new C_Parque_Niños(gl, 40, 0.05f, 10, 7, 7, 7, 0);
+//        this.jardin1 = new C_Jardin_Chino(gl, 25, 0.1f, -16, 8, 4, 8, 0);
+//        this.Parq_Perritos1 = new C_Parque_Perritos(gl, 8f, 0.1f, -10, 5, 5, 5, 0);
+//        this.caminos1 = new C_Caminos(gl, 25, 0f, 0, 24, 19, 19, 0);
+//        this.arboles1 = new C_Arboles(gl, 25, 0, 0, 25, 25, 20, false);
+//        this.personas1 = new C_Personas(gl, 25, 0, 0, 20, 2.5f, 20);
+//
+//        this.lago2 = new C_Lago(gl, -25, 0, 4, 4, 5, 3, 270);
+//        this.parqueadero2 = new C_Parqueadero(gl, -44, 0, -14, 3, 3, 3, 90);
+//        this.cancha2 = new C_Canchas(gl, -9f, 0.0f, 11, 8, 8, 8, 270);
+//        this.parque_niño2 = new C_Parque_Niños(gl, -40, 0.05f, 10, 7, 7, 7, 0);
+//        this.jardin2 = new C_Jardin_Chino(gl, -25, 0.1f, -16, 8, 4, 8, 180);
+//        this.Parq_Perritos2 = new C_Parque_Perritos(gl, -7f, 0.1f, -12f, 5, 5, 3.5f, 0);
+//        this.caminos2 = new C_Caminos(gl, -25, 0f, 0, 24, 19, 19, 0);
+//        this.arboles2 = new C_Arboles(gl, -25, 0, 0, 25, 20, 20, true);
+//        this.personas2 = new C_Personas(gl, -25, 0, 0, 20, 2.5f, 20);
+//
+//        this.cielo = new E_Cielo(gl, 0, 10, 0, 90, 40, 50);
+//        this.estrellitas = new C_Estrellas(gl, 0, 25, 0, 50, 1, 20, 30, .07f, .07f);
+//        this.nubes = new C_Nubes(gl, 0, 25, 0, 50, 5, 20, 20, .3f, .3f);
+//
+//        this.cesped = new C_Cesped(gl, 0, 0, 0, 50, 20, 20);
 
-        this.lago1 = new C_Lago(gl, 25, 0, -4, 4, 5, 5, 90);
-        this.parqueadero1 = new C_Parqueadero(gl, 44, 0, -14, 3, 3, 3, 0);
-        this.cancha1 = new C_Canchas(gl, 9f, 0.0f, 11, 8, 15, 8, 90);
-        this.parque_niño1 = new C_Parque_Niños(gl, 40, 0.05f, 10, 7, 7, 7, 0);
-        this.jardin1 = new C_Jardin_Chino(gl, 25, 0.1f, -16, 8, 4, 8, 0);
-        this.Parq_Perritos1 = new C_Parque_Perritos(gl, 8f, 0.1f, -10, 5, 5, 5, 0);
-        this.caminos1 = new C_Caminos(gl, 25, 0f, 0, 24, 19, 19, 0);
-        this.arboles1 = new C_Arboles(gl, 25, 0, 0, 25, 25, 20, false);
-        this.personas1 = new C_Personas(gl, 25, 0, 0, 20, 2.5f, 20);
-
-        this.lago2 = new C_Lago(gl, -25, 0, 4, 4, 5, 3, 270);
-        this.parqueadero2 = new C_Parqueadero(gl, -44, 0, -14, 3, 3, 3, 90);
-        this.cancha2 = new C_Canchas(gl, -9f, 0.0f, 11, 8, 8, 8, 270);
-        this.parque_niño2 = new C_Parque_Niños(gl, -40, 0.05f, 10, 7, 7, 7, 0);
-        this.jardin2 = new C_Jardin_Chino(gl, -25, 0.1f, -16, 8, 4, 8, 180);
-        this.Parq_Perritos2 = new C_Parque_Perritos(gl, -7f, 0.1f, -12f, 5, 5, 3.5f, 0);
-        this.caminos2 = new C_Caminos(gl, -25, 0f, 0, 24, 19, 19, 0);
-        this.arboles2 = new C_Arboles(gl, -25, 0, 0, 25, 20, 20, true);
-        this.personas2 = new C_Personas(gl, -25, 0, 0, 20, 2.5f, 20);
-
-        this.estrellitas = new C_Estrellas(gl, 0, 25, 0, 50, 1, 20, 30, .07f, .07f);
-        this.nubes = new C_Nubes(gl, 0, 25, 0, 50, 5, 20, 20, .3f, .3f);
-
-        this.cesped = new C_Cesped(gl, 0, 0, 0, 50, 20, 20);
+        this.perro = new E_Perrito(gl, 3, 0, 0, 5, 5, 5, 0);
 
 //        this.bici = new E_Bicicleta(gl, 0, 0, 0, 5, 5, 5, 0, 0, 0, 1, 0, 1);
 //******************************************************************************************************************************************************************************************
@@ -192,40 +194,42 @@ public class Proyecto_Final implements GLEventListener {
         //******************************************************************************************************************************************************************************************
         this.suelo.Dibuja();
 
-        this.lago1.Dibuja();
-        this.parqueadero1.Dibuja();
-        this.cancha1.Dibuja();
-        this.parque_niño1.Dibuja();
-        this.jardin1.Dibuja();
-        this.Parq_Perritos1.Dibuja();
-        this.caminos1.Dibuja();
-        this.arboles1.Dibuja();
-        this.personas1.Dibuja();
-
-        this.lago2.Dibuja();
-        this.parqueadero2.Dibuja();
-        this.cancha2.Dibuja();
-        this.parque_niño2.Dibuja();
-        this.jardin2.Dibuja();
-        this.Parq_Perritos2.Dibuja();
-        this.caminos2.Dibuja();
-        this.arboles2.Dibuja();
-        this.personas2.Dibuja();
-
-        if (contador < (limite / 2) && estado == true) {
-            this.estrellitas.Dibuja();
-        }
-        if (contador > (limite / 2) && estado == false) {
-            this.estrellitas.Dibuja();
-        }
-        if (contador < (limite / 2) && estado == false) {
-            this.nubes.Dibuja();
-        }
-        if (contador > (limite / 2) && estado == true) {
-            this.nubes.Dibuja();
-        }
-
-        this.cielo.Dibuja();
+//        this.lago1.Dibuja();
+//        this.parqueadero1.Dibuja();
+//        this.cancha1.Dibuja();
+//        this.parque_niño1.Dibuja();
+//        this.jardin1.Dibuja();
+//        this.Parq_Perritos1.Dibuja();
+//        this.caminos1.Dibuja();
+//        this.arboles1.Dibuja();
+//        this.personas1.Dibuja();
+//
+//        this.lago2.Dibuja();
+//        this.parqueadero2.Dibuja();
+//        this.cancha2.Dibuja();
+//        this.parque_niño2.Dibuja();
+//        this.jardin2.Dibuja();
+//        this.Parq_Perritos2.Dibuja();
+//        this.caminos2.Dibuja();
+//        this.arboles2.Dibuja();
+//        this.personas2.Dibuja();
+//
+//        if (contador < (limite / 2) && estado == true) {
+//            this.estrellitas.Dibuja();
+//        }
+//        if (contador > (limite / 2) && estado == false) {
+//            this.estrellitas.Dibuja();
+//        }
+//        if (contador < (limite / 2) && estado == false) {
+//            this.nubes.Dibuja();
+//        }
+//        if (contador > (limite / 2) && estado == true) {
+//            this.nubes.Dibuja();
+//        }
+//
+//        this.cielo.Dibuja();
+        
+        this.perro.Dibuja();
 
 //        this.cesped.Dibuja();
 //        this.bici.Dibuja(true);

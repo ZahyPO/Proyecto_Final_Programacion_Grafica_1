@@ -21,7 +21,6 @@ public class E_Barco {
     E_Tablas tab1, tab2, tab3, tab4, respaldo, asiento;
 
     P_Cilindro tubo;
-    P_Esfera bolita;
     P_Triangulo bandera;
 
     public E_Barco(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz, float r, float g, float b) {
