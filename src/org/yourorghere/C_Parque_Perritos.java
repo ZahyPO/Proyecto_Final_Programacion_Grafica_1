@@ -21,6 +21,8 @@ public class C_Parque_Perritos {
     E_Jueg_2_Perros juego_2_1, juego_2_2, juego_2_3;
 
     P_Cilindro juego_3_1, juego_3_2;
+    
+    E_Perrito perro1,perro2;
 
     public C_Parque_Perritos(GL gl, float x, float y, float z, float w, float h, float p, float ry) {
         this.gl = gl;
@@ -47,6 +49,9 @@ public class C_Parque_Perritos {
 
         this.juego_3_1 = new P_Cilindro(gl, 0.3f, 0.04f, -0.3f, 0.1f, 0.1f, 0.3f, 0, 90, 0, 0.5f, 0.3f, 0.9f, 0.5f, 0.5f);
         this.juego_3_2 = new P_Cilindro(gl, -0.7f, 0.04f, 0.3f, 0.1f, 0.1f, 0.3f, 0, 90, 0, 0.2f, 1, 0.6f, 0.5f, 0.5f);
+        
+        this.perro1 = new E_Perrito(gl, 0.3f, 0, 0, .1f, .1f, .1f, 0);
+        this.perro2 = new E_Perrito(gl, 0.1f, 0, 0, .2f, .2f, .2f, 0);
     }
 
     public void Dibuja() {
@@ -79,6 +84,9 @@ public class C_Parque_Perritos {
 
         this.juego_3_1.Dibuja();
         this.juego_3_2.Dibuja();
+        
+        this.perro1.Dibuja();
+        this.perro2.Dibuja();
 
         gl.glEnd();
 

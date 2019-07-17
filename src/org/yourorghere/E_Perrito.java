@@ -91,6 +91,7 @@ public class E_Perrito {
     
     void giratodo() {
 
+        this.ry = this.ry + 0.3f;
         this.ryy = this.ryy + 0.3f;
 
         gl.glRotatef(ryy, 0, 1, 0);

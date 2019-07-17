@@ -15,11 +15,14 @@ public class E_Bicicleta {
 
 //    P_Cuadrado suelo;
     P_Dona llanta1, llanta2;
+
     P_Cilindro tubo1, tubo2, tubo3, tubo4, tubo5, tubo6, tubo7, tubo8;
 
     P_Esfera pedal1, pedal2;
 
-    public E_Bicicleta(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz, float r, float g, float b) {
+    P_Esfera asiento;
+
+    public E_Bicicleta(GL gl, float x, float y, float z, float w, float h, float p, float rx, float ry, float rz) {
         this.gl = gl;
         this.x = x;
         this.y = y;
@@ -30,9 +33,10 @@ public class E_Bicicleta {
         this.rx = rx;
         this.ry = ry;
         this.rz = rz;
-        this.r = r;
-        this.g = g;
-        this.b = b;
+
+        r = (float) Math.random();
+        g = (float) Math.random();
+        b = (float) Math.random();
 
 //        this.suelo = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 0);
         this.llanta1 = new P_Dona(gl, -.4f, 0.22f, 0, 0.3f, 0.3f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
@@ -44,16 +48,20 @@ public class E_Bicicleta {
         this.tubo5 = new P_Cilindro(gl, -.25f, .4f, 0.03f, 0.15f, 0.15f, 0.45f, 0, 90, 0, r, g, b, 0.1, 0.1);
         this.tubo6 = new P_Cilindro(gl, .12f, .2f, 0.03f, 0.15f, 0.15f, 0.43f, 0, -65, 0, r, g, b, 0.1, 0.1);
         this.tubo7 = new P_Cilindro(gl, -.1f, .6f, -0.1f, 0.15f, 0.15f, 0.2f, 90, 0, 0, r + 0.2f, g + .2f, b + .2f, 0.1, 0.1);
+
+        this.asiento = new P_Esfera(gl, .23f, .5f, 0, .1f, .05f, .1f, 0, 0, 0, 0.8f, 0.8f, 0.6f);
     }
 
     public void Dibuja(boolean est) {
         gl.glPushMatrix();
+
         if (est) {
             girallantas();
         }
 
         gl.glTranslatef(this.x, this.y, this.z);
         gl.glRotatef(ry, 0, 1, 0);
+        gl.glRotatef(rx, 1, 0, 0);
         gl.glScalef(this.w, this.h, this.p);
 
 //        this.suelo.Dibuja();
@@ -67,6 +75,8 @@ public class E_Bicicleta {
         this.tubo5.Dibuja();
         this.tubo6.Dibuja();
         this.tubo7.Dibuja();
+
+        asiento.Dibuja();
 
         gl.glEnd();
 

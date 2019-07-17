@@ -25,6 +25,8 @@ public class C_Caminos {
 
     E_Faro faro1, faro2, faro3;
 
+    E_Bicicleta bici1, bici2, bici3, bici4, bici5;
+
     public C_Caminos(GL gl, float x, float y, float z, float w, float h, float p, float ry) {
         this.gl = gl;
         this.x = x;
@@ -70,9 +72,16 @@ public class C_Caminos {
         this.faro1 = new E_Faro(gl, -1, 0, 0.05f, .2f, .2f, .2f, 0, 0, 0);
         this.faro2 = new E_Faro(gl, 0.3f, 0, 0.75f, .2f, .2f, .2f, 0, 0, 0);
         this.faro3 = new E_Faro(gl, 0.5f, 0, -0.7f, .2f, .2f, .2f, 0, 0, 0);
+
+        this.bici1 = new E_Bicicleta(gl, -0.4f, 0, 0.12f, .07f, .07f, .07f, -10, 0, 0);
+        this.bici2 = new E_Bicicleta(gl, -0.34f, 0, -0.5f, .07f, .07f, .07f, 10, 45, 0);
+        this.bici3 = new E_Bicicleta(gl, 0.6f, 0, 0.12f, .07f, .07f, .07f, -10, 0, 0);
+        this.bici4 = new E_Bicicleta(gl, 0.63f, 0, -0.12f, .07f, .07f, .07f, -10, 90, 0);
+        this.bici5 = new E_Bicicleta(gl, -0.2f, 0, 0.73f, .07f, .07f, .07f, -10, 0, 0);
     }
 
     public void Dibuja() {
+
         gl.glPushMatrix();
 
         gl.glTranslated(this.x, this.y, this.z);
@@ -184,6 +193,12 @@ public class C_Caminos {
             faro3.x = faro3.x - .17f;
             faro3.Dibuja();
         }
+
+        this.bici1.Dibuja(true);
+        this.bici2.Dibuja(false);
+        this.bici3.Dibuja(true);
+        this.bici4.Dibuja(false);
+        this.bici5.Dibuja(true);
 
         gl.glEnd();
 
