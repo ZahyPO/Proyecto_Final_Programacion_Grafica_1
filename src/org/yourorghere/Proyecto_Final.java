@@ -43,7 +43,7 @@ public class Proyecto_Final implements GLEventListener {
 
     static boolean estado = true;
     static int contador;
-    int limite = 100;
+    static int limite = 100;
 
     M_Teclado mt;
     M_Mouse mm;

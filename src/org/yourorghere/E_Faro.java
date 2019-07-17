@@ -11,6 +11,8 @@ public class E_Faro {
     float x, y, z;
     float w, h, p;
     float rx, ry, rz;
+    
+//    int limite = 100;
 
 //    P_Cuadrado suelo1, suelo2;
     P_Cilindro tubo;
@@ -32,8 +34,8 @@ public class E_Faro {
 //        this.suelo1 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 1);
 //        this.suelo2 = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 0, 0, 0, 1, 1, 1);
         this.tubo = new P_Cilindro(gl, 0, 0, 0, .3f, .3f, .7f, 0, 0, 0, .5f, .6f, .5f, 0.1, 0.1);
-        this.foco1 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 0, 0, 1, 1, 0);
-        this.foco2 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 45, 0, 1, 1, 0.4f);
+        this.foco1 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 0, 0, 1, 1, 1);
+        this.foco2 = new P_Cubo(gl, 0, .7f, 0, .05f, .07f, .05f, 0, 45, 0, 1, 1, 1);
 
         this.techo1 = new P_Piramide(gl, 0, .8f, 0, .06f, .045f, .06f, 0, 0, 0, .5f, .5f, .5f);
         this.techo2 = new P_Piramide(gl, 0, .8f, 0, .06f, .045f, .06f, 0, 45, 0, .5f, .5f, .5f);
@@ -41,7 +43,9 @@ public class E_Faro {
 
     public void Dibuja() {
         gl.glPushMatrix();
-
+        
+        cambia_de_color();
+        
         gl.glTranslatef(this.x, this.y, this.z);
         gl.glRotatef(ry, 0, 1, 0);
         gl.glScalef(this.w, this.h, this.p);
@@ -58,6 +62,41 @@ public class E_Faro {
 
         gl.glPopMatrix();
 
+    }
+
+    void cambia_de_color() {
+        if (Proyecto_Final.contador < (Proyecto_Final.limite / 2) && Proyecto_Final.estado == true) {
+            this.foco1.r = 1;
+            this.foco2.r = 1;
+            this.foco1.g = 1;
+            this.foco2.g = 1;
+            this.foco1.b = 0;
+            this.foco2.b = .4f;
+        }
+        if (Proyecto_Final.contador > (Proyecto_Final.limite / 2) && Proyecto_Final.estado == false) {
+            this.foco1.r = 1;
+            this.foco2.r = 1;
+            this.foco1.g = 1;
+            this.foco2.g = 1;
+            this.foco1.b = 0;
+            this.foco2.b = .4f;
+        }
+        if (Proyecto_Final.contador < (Proyecto_Final.limite / 2) && Proyecto_Final.estado == false) {
+            this.foco1.r = 0;
+            this.foco2.r = .0f;
+            this.foco1.g = .2f;
+            this.foco2.g = .6f;
+            this.foco1.b = .5f;
+            this.foco2.b = .6f;
+        }
+        if (Proyecto_Final.contador > (Proyecto_Final.limite / 2) && Proyecto_Final.estado == true) {
+            this.foco1.r = 0;
+            this.foco2.r = .0f;
+            this.foco1.g = .2f;
+            this.foco2.g = .6f;
+            this.foco1.b = .5f;
+            this.foco2.b = .6f;
+        }
     }
 
 }
