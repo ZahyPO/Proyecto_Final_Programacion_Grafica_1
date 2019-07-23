@@ -24,6 +24,9 @@ public class M_Teclado implements KeyListener {
         }
         if (e.getKeyChar() == '3') {
             Proyecto_Final.num_cam = 3;
+            Proyecto_Final.camx = 0;
+            Proyecto_Final.camy = 1;
+            Proyecto_Final.camz = 0;
 
         }
         if (e.getKeyChar() == '4') {
@@ -39,7 +42,6 @@ public class M_Teclado implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             Proyecto_Final.camx += 1;
-            System.out.println(Proyecto_Final.camx);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -50,29 +52,24 @@ public class M_Teclado implements KeyListener {
             if (Proyecto_Final.camx == 20 && Proyecto_Final.camz == 0 && Proyecto_Final.camy == 2) {
                 Proyecto_Final.camy -= 1;
             }
-            System.out.println(Proyecto_Final.camx);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             Proyecto_Final.camy += 1;
-            System.out.println(Proyecto_Final.camy);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             if (Proyecto_Final.camy > 1) {
                 Proyecto_Final.camy -= 1;
             }
-            System.out.println(Proyecto_Final.camy);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_A) {
             Proyecto_Final.camz -= 1;
-            System.out.println(Proyecto_Final.camz);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_Z) {
             Proyecto_Final.camz += 1;
-            System.out.println(Proyecto_Final.camz);
         }
     }
 

@@ -137,7 +137,7 @@ public class Proyecto_Final implements GLEventListener {
         this.cielo = new C_Cielo(gl, 0, 10, 0, 90, 40, 50);
         this.estrellitas = new C_Estrellas(gl, 0, 25, 0, 50, 1, 20, 30, .07f, .07f);
         this.nubes = new C_Nubes(gl, 0, 25, 0, 50, 5, 20, 20, .3f, .3f);
-        this.personaje = new E_Bicicleta(gl, -35, .1f, 0, 1, 1, 1, 0, 180, 0);
+        this.personaje = new E_Bicicleta(gl, -50, .1f, 0, 1, 1, 1, 0, 180, 0);
 //******************************************************************************************************************************************************************************************
         System.err.println("INIT GL IS: " + gl.getClass().getName());
 
@@ -194,10 +194,13 @@ public class Proyecto_Final implements GLEventListener {
 //******************************************************************************************************************************************************************************************
 /* Coloco los if para cada camara;*/
 //******************************************************************************************************************************************************************************************
-        this.personaje.movimiento_Bicicleta_Principa();
-
         if (num_cam == 1) {
-            glu.gluLookAt(personaje.x, personaje.y, personaje.z - 2, personaje.x, personaje.y, personaje.z, 0, 1, 0);
+            
+            /*Camara que sigue al personaje principal, que es una 
+            bicicleta, recorriendo el camino pincipal*/
+            
+            this.personaje.movimiento_Bicicleta_Principa();
+            glu.gluLookAt(personaje.x - 1.3, personaje.y + 1, personaje.z, personaje.x + 1, personaje.y + 1, vistz, 0, 1, 0);
         }
         if (num_cam == 2) {
 
@@ -288,7 +291,7 @@ public class Proyecto_Final implements GLEventListener {
         }
 
         this.cielo.Dibuja();
-//        this.personaje.Dibuja(true);
+        this.personaje.Dibuja(true);
 
 //        this.cesped.Dibuja();
 //******************************************************************************************************************************************************************************************

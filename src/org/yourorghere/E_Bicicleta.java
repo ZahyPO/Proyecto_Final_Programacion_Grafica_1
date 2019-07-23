@@ -5,6 +5,7 @@ import javax.media.opengl.GL;
 /*
  * @author zalis
  */
+
 public class E_Bicicleta {
 
     GL gl;
@@ -88,8 +89,8 @@ public class E_Bicicleta {
     }
 
     void girallantas() {
-        this.llanta1.rz += 1;
-        this.llanta2.rz += 1;
+        this.llanta1.rz += 2;
+        this.llanta2.rz += 2;
     }
 
     public void movimiento_Bicicleta_Principa() {
@@ -105,15 +106,30 @@ public class E_Bicicleta {
             rz = 0;
             this.y = 1.4f;
         }
-        if (x >= -19.97 && x <= -16.56) {
+        if (x >= -19.97 && x <= -16.84) {
             rz = 25;
             this.y -= .012;
         }
-        if (x >= -16.53 && x <= 20) {
+        if (x >= -16.81 && x <= 18.2) {
             rz = 0;
             this.y = .1f;
         }
-        System.out.println(x);
+        if (x <= 33 && x >= 29.7) {
+            rz = 24;
+            this.y -= .01;
+        }
+        if (x <= 29.67 && x >= 20.66) {
+            rz = 0;
+            this.y = 1.4f;
+        }
+        if (x <= 20.63 && x >= 18.23) {
+            rz = -25;
+            this.y += .017;
+        }
+        if (x <= 50 && x >= 33.3) {
+            rz = 0;
+            this.y = .1f;
+        }
     }
 
 }
