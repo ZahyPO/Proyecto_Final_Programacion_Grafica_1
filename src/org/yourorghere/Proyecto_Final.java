@@ -15,38 +15,51 @@ public class Proyecto_Final implements GLEventListener {
 
     P_Cuadrado suelo;
 
-    static float a = 0;
-
+///////Grafico los elementos completos C_
     C_Lago lago1, lago2;
     C_Parqueadero parqueadero1, parqueadero2;
     C_Canchas cancha1, cancha2;
-    C_Parque_Niños parque_niño1, parque_niño2;
     C_Jardin_Chino jardin1, jardin2;
+
     C_Caminos caminos1, caminos2;
     C_Parque_Perritos Parq_Perritos1, Parq_Perritos2;
+    C_Parque_Niños parque_niño1, parque_niño2;
+
     C_Arboles arboles1, arboles2;
     C_Personas personas1, personas2;
 
-    C_Cesped cesped;
     C_Estrellas estrellitas;
     C_Nubes nubes;
+    C_Cielo cielo;
 
-    E_Cielo cielo;
+    E_Bicicleta personaje;
+////
 
+//    C_Cesped cesped;
+//// Variables de camara
     static double camx = 0;
-    static double camy = 0;
+    static double camy = 1;
     static double camz = 20;
 
     static double vistx = 0;
     static double visty = 0;
     static double vistz = 0;
 
-    static boolean estado = true;
-    static int contador;
-    static int limite = 100;
+    float a = 0;
+    static int num_cam = 1;
+    int r;
+////
 
+//// Variables para el cambio de estado del dia y la noche
+    static boolean estado = true; ///dia noche
+    static int contador;          ///variable que cuenta el avance 
+    static int limite = 100;      ///cantidad máxima
+////
+
+//// Manejadores de teclado y mouse
     M_Teclado mt;
     M_Mouse mm;
+////
 
     public static void main(String[] args) {
         Frame frame = new Frame("Proyecto Final Zahyta Padilla Orrala");
@@ -54,7 +67,7 @@ public class Proyecto_Final implements GLEventListener {
 
         canvas.addGLEventListener(new Proyecto_Final());
         frame.add(canvas);
-        frame.setSize(1800, 900);
+        frame.setSize(1000, 500);
         final Animator animator = new Animator(canvas);
         frame.addWindowListener(new WindowAdapter() {
 
@@ -87,13 +100,17 @@ public class Proyecto_Final implements GLEventListener {
         GL gl = drawable.getGL();
         gl.glEnable(GL.GL_DEPTH_TEST);
 
-        this.mt = new M_Teclado(); //Quitamos el static
+//////  Manejadores de teclado y mouse
+        this.mt = new M_Teclado();
         drawable.addKeyListener(mt);
 
         this.mm = new M_Mouse();
-//        drawable.addMouseListener(mm);
-//        drawable.addMouseMotionListener(mm);
+        drawable.addMouseListener(mm);
+        drawable.addMouseMotionListener(mm);
 
+//******************************************************************************************************************************************************************************************
+// creo los objetos, los completos, el tamaño del suelo es 50
+// el resto de objetos de acuerdo a lo necesario
 //******************************************************************************************************************************************************************************************
         this.suelo = new P_Cuadrado(gl, 0, -0.1f, 0, 50, 20, 90, 0, 0, 0.1f, 0.4f, 0.2f);
 
@@ -117,11 +134,10 @@ public class Proyecto_Final implements GLEventListener {
         this.arboles2 = new C_Arboles(gl, -25, 0, 0, 25, 20, 20, true);
         this.personas2 = new C_Personas(gl, -25, 0, 0, 20, 2.5f, 20);
 
-        this.cielo = new E_Cielo(gl, 0, 10, 0, 90, 40, 50);
+        this.cielo = new C_Cielo(gl, 0, 10, 0, 90, 40, 50);
         this.estrellitas = new C_Estrellas(gl, 0, 25, 0, 50, 1, 20, 30, .07f, .07f);
         this.nubes = new C_Nubes(gl, 0, 25, 0, 50, 5, 20, 20, .3f, .3f);
-
-//        this.cesped = new C_Cesped(gl, 0, 0, 0, 50, 20, 20);
+        this.personaje = new E_Bicicleta(gl, -35, .1f, 0, 1, 1, 1, 0, 180, 0);
 //******************************************************************************************************************************************************************************************
         System.err.println("INIT GL IS: " + gl.getClass().getName());
 
@@ -161,30 +177,79 @@ public class Proyecto_Final implements GLEventListener {
         gl.glLoadIdentity();
         GLU glu = new GLU();
 
-        glu.gluLookAt(camx, camy, camz, vistx, visty, vistz, 0, 1, 0);
+//        ///Ejes guia, x, y, z
+//        gl.glBegin(GL.GL_LINES);//Inicio de la creacion//Tipo 
+//        gl.glLineWidth(2);
+//
+//        gl.glVertex3d(0, 100, 0);
+//        gl.glVertex3d(0, -100, 0);
+//
+//        gl.glVertex3d(100, 0, 0);
+//        gl.glVertex3d(-100, 0, 0);
+//
+//        gl.glVertex3d(0, 0, 100);
+//        gl.glVertex3d(0, 0, -100);
+//
+//        gl.glEnd();
+//******************************************************************************************************************************************************************************************
+/* Coloco los if para cada camara;*/
+//******************************************************************************************************************************************************************************************
+        this.personaje.movimiento_Bicicleta_Principa();
 
-        gl.glBegin(GL.GL_LINES);//Inicio de la creacion//Tipo 
-        gl.glLineWidth(2);
+        if (num_cam == 1) {
+            glu.gluLookAt(personaje.x, personaje.y, personaje.z - 2, personaje.x, personaje.y, personaje.z, 0, 1, 0);
+        }
+        if (num_cam == 2) {
 
-        gl.glVertex3d(0, 100, 0);
-        gl.glVertex3d(0, -100, 0);
+            /*Cámara panorámica*/
+            camx = -85;
+            camy = 15;
+            camz = 45;
+            vistx = -20;
+            visty = 10;
 
-        gl.glVertex3d(100, 0, 0);
-        gl.glVertex3d(-100, 0, 0);
+            glu.gluLookAt(camx, camy, camz, vistx, visty, vistz, 0, 1, 0);
+        }
+        if (num_cam == 3) {
 
-        gl.glVertex3d(0, 0, 100);
-        gl.glVertex3d(0, 0, -100);
+            /* Cámara que es controlada por teclado la posicion
+            y por mouse la vista*/
+            glu.gluLookAt(camx, camy, camz, vistx, visty, vistz, 0, 1, 0);
+        }
+        if (num_cam == 4) {
 
-        gl.glEnd();
+            /*Cámara que gira al rededor de un objeto*/
+            r = 17;
+            a = a + 0.005f;
 
-        //******************************************************************************************************************************************************************************************
+            camx = r * Math.cos(a);
+            camz = r * Math.sin(a);
+
+            glu.gluLookAt(lago1.x + camx, 7, camz, lago1.x, 0, lago1.z + 4, 0, 1, 0);
+        }
+        if (num_cam == 5) {
+
+            /* Vista Cenital del escenario completo*/
+            camx = 0;
+            camy = 70;
+            camz = 1;
+            glu.gluLookAt(camx, camy, camz, 0, 0, 0, 0, 1, 0);
+        }
+//******************************************************************************************************************************************************************************************
+// proceso para variar el estado del dia, si el contador es menos que el limite
+// sigue aumentando, si no, se reinicia, y el booleano cambia de estado
+//******************************************************************************************************************************************************************************************
         if (contador < limite) {
             contador++;
         } else {
             contador = 0;
             estado = !estado;
         }
-        //******************************************************************************************************************************************************************************************
+
+//******************************************************************************************************************************************************************************************
+// Dibujo los elementos, como son completos solo ubico todo, estan 2 de cada uno
+// para agrandar el escenario, y  estan volteados
+//******************************************************************************************************************************************************************************************
         this.suelo.Dibuja();
 
         this.lago1.Dibuja();
@@ -207,6 +272,8 @@ public class Proyecto_Final implements GLEventListener {
         this.arboles2.Dibuja();
         this.personas2.Dibuja();
 
+        // De acuerdo al estado se grafican estrellas o nubes
+        // y para un mejor resultado se toma en cuenta el contador 
         if (contador < (limite / 2) && estado == true) {
             this.estrellitas.Dibuja();
         }
@@ -221,6 +288,7 @@ public class Proyecto_Final implements GLEventListener {
         }
 
         this.cielo.Dibuja();
+//        this.personaje.Dibuja(true);
 
 //        this.cesped.Dibuja();
 //******************************************************************************************************************************************************************************************
@@ -231,4 +299,5 @@ public class Proyecto_Final implements GLEventListener {
     @Override
     public void displayChanged(GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
     }
+
 }

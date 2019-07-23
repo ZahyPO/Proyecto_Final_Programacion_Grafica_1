@@ -39,8 +39,10 @@ public class E_Bicicleta {
         b = (float) Math.random();
 
 //        this.suelo = new P_Cuadrado(gl, 0, 0f, 0, 1, 1, 90, 0, 0, 1, 1, 0);
-        this.llanta1 = new P_Dona(gl, -.4f, 0.22f, 0, 0.3f, 0.3f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
-        this.llanta2 = new P_Dona(gl, .4f, 0.17f, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
+        this.llanta1 = new P_Dona(gl, -.4f, 0.22f, 0, 0.3f, 0.3f, 0.2f, 0, 0, 0, 1, 1, 1, 0.1f, 0.7f);
+        this.llanta2 = new P_Dona(gl, .4f, 0.17f, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 1, 1, 1, 0.1f, 0.7f);
+//        this.llanta1 = new P_Dona(gl, -.4f, 0.22f, 0, 0.3f, 0.3f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
+//        this.llanta2 = new P_Dona(gl, .4f, 0.17f, 0, 0.25f, 0.25f, 0.2f, 0, 0, 0, 0, 0, 0, 0.1f, 0.7f);
         this.tubo1 = new P_Cilindro(gl, -.4f, .2f, 0.03f, 0.15f, 0.15f, 0.5f, 0, 35, 0, r, g, b, 0.1, 0.1);
         this.tubo2 = new P_Cilindro(gl, .1f, .2f, 0.03f, 0.15f, 0.15f, 0.3f, 0, 25, 0, r, g, b, 0.1, 0.1);
         this.tubo3 = new P_Cilindro(gl, .4f, .2f, 0.03f, 0.15f, 0.15f, 0.3f, 0, -45, 0, r, g, b, 0.1, 0.1);
@@ -60,8 +62,9 @@ public class E_Bicicleta {
         }
 
         gl.glTranslatef(this.x, this.y, this.z);
-        gl.glRotatef(ry, 0, 1, 0);
         gl.glRotatef(rx, 1, 0, 0);
+        gl.glRotatef(ry, 0, 1, 0);
+        gl.glRotatef(rz, 0, 0, 1);
         gl.glScalef(this.w, this.h, this.p);
 
 //        this.suelo.Dibuja();
@@ -87,6 +90,30 @@ public class E_Bicicleta {
     void girallantas() {
         this.llanta1.rz += 1;
         this.llanta2.rz += 1;
+    }
+
+    public void movimiento_Bicicleta_Principa() {
+        this.x += .03;
+        if (this.x > 50) {
+            this.x = -50;
+        }
+        if (x >= -31.8 && x <= -29.7) {
+            rz = -27;
+            this.y += .015;
+        }
+        if (x >= -29.67 && x <= -20) {
+            rz = 0;
+            this.y = 1.4f;
+        }
+        if (x >= -19.97 && x <= -16.56) {
+            rz = 25;
+            this.y -= .012;
+        }
+        if (x >= -16.53 && x <= 20) {
+            rz = 0;
+            this.y = .1f;
+        }
+        System.out.println(x);
     }
 
 }

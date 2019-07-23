@@ -48,12 +48,12 @@ public class M_Mouse implements MouseListener, MouseMotionListener {
 
         int x = e.getX();
         int y = e.getY();
+
         if (x < 250) {
             Proyecto_Final.vistx = Proyecto_Final.vistx - 1;
         }
         if (x > 350) {
             Proyecto_Final.vistx = Proyecto_Final.vistx + 1;
-
         }
 
         if (y < 250) {
@@ -61,9 +61,6 @@ public class M_Mouse implements MouseListener, MouseMotionListener {
         }
         if (y > 350) {
             Proyecto_Final.visty = Proyecto_Final.visty - 1;
-
         }
-
     }
-
 }

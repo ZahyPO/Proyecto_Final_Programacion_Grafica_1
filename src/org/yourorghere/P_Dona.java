@@ -46,7 +46,7 @@ public class P_Dona {
         gl.glRotatef(rz, 0, 0, 1);
         gl.glScalef(w, h, p);
 
-        glut.glutSolidTorus(radint, radext, 7, 7);
+        glut.glutSolidTorus(radint, radext, 7, 10);
 
         gl.glEnd();
 

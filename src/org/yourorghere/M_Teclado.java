@@ -15,37 +15,23 @@ public class M_Teclado implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == '1') {
-            Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 0;
-            Proyecto_Final.camz = 40;
+            Proyecto_Final.num_cam = 1;
 
         }
         if (e.getKeyChar() == '2') {
-            Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 4;
-            Proyecto_Final.camz = 7;
+            Proyecto_Final.num_cam = 2;
 
         }
         if (e.getKeyChar() == '3') {
-            Proyecto_Final.camx = 10;
-            Proyecto_Final.camy = 3;
-            Proyecto_Final.camz = 10;
+            Proyecto_Final.num_cam = 3;
 
         }
         if (e.getKeyChar() == '4') {
+            Proyecto_Final.num_cam = 4;
 
-            int r = 30;
-
-            Proyecto_Final.a = Proyecto_Final.a + 0.01f;
-
-            Proyecto_Final.camx = r * Math.cos(Proyecto_Final.a);;
-            Proyecto_Final.camz = r * Math.sin(Proyecto_Final.a);
         }
         if (e.getKeyChar() == '5') {
-
-            Proyecto_Final.camx = 0;
-            Proyecto_Final.camy = 70;
-            Proyecto_Final.camz = 1;
+            Proyecto_Final.num_cam = 5;
         }
     }
 
@@ -53,25 +39,40 @@ public class M_Teclado implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             Proyecto_Final.camx += 1;
+            System.out.println(Proyecto_Final.camx);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             Proyecto_Final.camx -= 1;
+            if (Proyecto_Final.camx == 33 && Proyecto_Final.camz == 0 && Proyecto_Final.camy == 1) {
+                Proyecto_Final.camy += 1;
+            }
+            if (Proyecto_Final.camx == 20 && Proyecto_Final.camz == 0 && Proyecto_Final.camy == 2) {
+                Proyecto_Final.camy -= 1;
+            }
+            System.out.println(Proyecto_Final.camx);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             Proyecto_Final.camy += 1;
+            System.out.println(Proyecto_Final.camy);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            Proyecto_Final.camy -= 1;
+            if (Proyecto_Final.camy > 1) {
+                Proyecto_Final.camy -= 1;
+            }
+            System.out.println(Proyecto_Final.camy);
         }
+
         if (e.getKeyCode() == KeyEvent.VK_A) {
             Proyecto_Final.camz -= 1;
+            System.out.println(Proyecto_Final.camz);
         }
 
         if (e.getKeyCode() == KeyEvent.VK_Z) {
             Proyecto_Final.camz += 1;
+            System.out.println(Proyecto_Final.camz);
         }
     }
 
